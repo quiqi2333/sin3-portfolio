@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="桑艺珊的个人作品集，收录环境设计、游戏策划与 Vibe Coding 作品。">
+  <title>SIN3 — 桑艺珊作品集</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <style>
+    :root{color-scheme:dark;--ink:#09090b;--paper:#f0efeb;--muted:#9b9aa0;--line:rgba(255,255,255,.16);--acid:#d7ff73;--violet:#9189ff;--serif:"Songti SC","Noto Serif SC","SimSun",Georgia,serif;--sans:"Arial","Microsoft YaHei",sans-serif;--mono:"Courier New",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--ink)}body{margin:0;background:var(--ink);color:#f6f5f2;font-family:var(--sans);font-size:16px;-webkit-font-smoothing:antialiased}button,a{font:inherit}a{color:inherit;text-decoration:none}button{color:inherit}img{display:block;max-width:100%}::selection{background:var(--acid);color:#111}
+    .topbar{position:fixed;z-index:40;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,4.5vw,72px);mix-blend-mode:difference;color:white;pointer-events:none}.topbar>*{pointer-events:auto}.brand{font-size:19px;font-weight:700;letter-spacing:.12em}.brand small{font:10px var(--mono);letter-spacing:.18em;opacity:.6;margin-left:8px}.toplinks{display:flex;gap:clamp(16px,3vw,42px);align-items:center}.toplinks button,.toplinks a{background:none;border:0;padding:0;color:inherit;cursor:pointer;font-size:12px;letter-spacing:.09em;text-transform:uppercase;opacity:.82}.toplinks button:hover,.toplinks a:hover{opacity:1;color:var(--acid)}
+    #app{min-height:100vh}.cover{height:100svh;min-height:600px;position:relative;display:grid;place-items:center;overflow:hidden;background:#08080a;isolation:isolate}.cover::before{content:"";position:absolute;width:min(70vw,760px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 49% 49%,rgba(86,81,141,.12),transparent 57%);filter:blur(28px)}.cover-title{view-transition-name:sin3-title;position:relative;font-size:clamp(74px,18vw,240px);font-weight:500;letter-spacing:-.095em;line-height:.8;margin-right:.09em}.cover-sub{position:absolute;left:clamp(22px,5vw,76px);bottom:clamp(28px,5vh,58px);font:11px var(--mono);letter-spacing:.16em;color:#a6a5aa}.scrollcue{position:absolute;right:clamp(22px,5vw,76px);bottom:clamp(25px,5vh,54px);display:flex;gap:14px;align-items:center;font:10px var(--mono);letter-spacing:.15em;color:#a6a5aa}.scrollcue i{height:39px;width:1px;background:linear-gradient(#a6a5aa,transparent);display:inline-block;animation:cue 1.5s ease-in-out infinite}@keyframes cue{50%{transform:scaleY(.55);transform-origin:top;opacity:.55}}
+    .hub{min-height:100svh;height:max(760px,100svh);position:relative;isolation:isolate;overflow:hidden;background:#101013}.hub-media,.hub-shade{position:absolute;inset:0;z-index:-2}.hub-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.02);transition:opacity 1300ms cubic-bezier(.65,0,.35,1),transform 1600ms ease}.hub-media img.is-active{opacity:1;transform:scale(1)}.hub-shade{z-index:-1;background:linear-gradient(180deg,#060609aa 0%,#06060920 28%,#07070955 58%,#070709d9 100%),linear-gradient(90deg,#0505074d,transparent 65%)}.hub-topline{position:absolute;top:100px;left:clamp(22px,5vw,76px);right:clamp(22px,5vw,76px);display:flex;justify-content:space-between;align-items:center;font:10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#ddd}.hub-topline span:last-child{color:#c8c7ca}.hub-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:min(80vw,760px);pointer-events:none}.hub-center h1{view-transition-name:sin3-title;position:absolute;left:50%;top:0;transform:translate(-50%,-50%);font-family:var(--sans);font-size:clamp(46px,8vw,112px);font-weight:500;letter-spacing:-.095em;line-height:.8;margin:0;text-shadow:0 5px 50px #0007}.hub-center p{position:absolute;top:clamp(54px,9vw,124px);left:0;right:0;font:10px var(--mono);letter-spacing:.24em;text-transform:uppercase;margin:0;color:#d1d0d2}
+    .project-orbit{position:absolute;inset:0;pointer-events:none}.orbit-link{position:absolute;pointer-events:auto;display:inline-flex;align-items:center;gap:9px;padding:8px 0;color:#f8f7f4;font-size:clamp(12px,1vw,15px);font-weight:600;letter-spacing:.015em;text-shadow:0 2px 16px #0009;transition:color .25s,transform .35s}.orbit-link::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acid);transform:scale(.55);opacity:0;transition:opacity .25s,transform .25s}.orbit-link:hover,.orbit-link:focus-visible{color:var(--acid);transform:translateY(-3px)}.orbit-link:hover::before,.orbit-link:focus-visible::before{opacity:1;transform:scale(1)}.orbit-link.active{color:var(--acid)}.orbit-link.active::before{opacity:1;transform:scale(1)}.orbit-link[data-project="tree"]{top:24%;left:13%}.orbit-link[data-project="eaves"]{top:33%;right:10%}.orbit-link[data-project="salt"]{bottom:23%;right:16%}.orbit-link[data-project="game"]{bottom:28%;left:11%}.hub-current{position:absolute;left:clamp(22px,5vw,76px);bottom:clamp(32px,6vh,72px);max-width:310px}.hub-current .eyebrow{font:10px var(--mono);letter-spacing:.18em;color:var(--acid);text-transform:uppercase}.hub-current h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3vw,42px);margin:9px 0 6px}.hub-current p{font-size:13px;color:#d0cfd2;margin:0}.view-project{position:absolute;right:clamp(22px,5vw,76px);bottom:clamp(32px,6vh,72px);border:1px solid #ffffff88;border-radius:999px;padding:13px 19px;font-size:12px;background:#1112;backdrop-filter:blur(10px);cursor:pointer;transition:background .25s,color .25s,border-color .25s}.view-project:hover{background:var(--acid);border-color:var(--acid);color:#111}.hub-back-intro{position:absolute;left:clamp(22px,5vw,76px);top:101px;font:9px var(--mono);letter-spacing:.15em;color:#ffffffb8}.hub-back-intro:hover{color:var(--acid)}.route-enter{animation:route-enter .55s both}@keyframes route-enter{from{opacity:.65;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.hub-scroll{position:absolute;right:50%;bottom:20px;transform:translateX(50%);font:9px var(--mono);letter-spacing:.15em;color:#f5f4f2a6}
+    .page-light{min-height:100vh;background:var(--paper);color:#161619;padding:120px clamp(20px,5vw,80px) 90px}.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;border-bottom:1px solid #17171733;padding-bottom:28px;margin-bottom:32px}.eyebrow{font:10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#747279}.page-head h1{font-family:var(--serif);font-size:clamp(48px,8vw,112px);line-height:.98;font-weight:400;letter-spacing:-.055em;margin:18px 0 0}.page-head p{max-width:340px;font-size:14px;line-height:1.8;color:#65646a;margin:0}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.work-card{display:block;position:relative;overflow:hidden;background:#17171a;color:#fff;min-height:400px;aspect-ratio:1.12;border-radius:2px}.work-card img{position:absolute;width:100%;height:100%;inset:0;object-fit:cover;transition:transform .9s cubic-bezier(.18,.68,.2,1),filter .5s}.work-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,#09090bba 100%);pointer-events:none}.work-card:hover img{transform:scale(1.045);filter:saturate(1.08)}.work-card-copy{position:absolute;z-index:1;left:clamp(18px,3vw,38px);right:20px;bottom:clamp(18px,3vw,38px)}.work-card-copy .eyebrow{color:#e2e1e2ad}.work-card-copy h2{font-family:var(--serif);font-size:clamp(24px,3.3vw,42px);font-weight:400;margin:12px 0 4px}.work-card-copy p{margin:0;color:#d4d2d2;font-size:13px}.work-card .card-arrow{position:absolute;z-index:1;right:28px;top:26px;font:13px var(--mono);color:#fff;transition:transform .3s}.work-card:hover .card-arrow{transform:translate(3px,-3px)}.empty-state{padding:clamp(44px,8vw,110px) 0;display:flex;align-items:flex-start;gap:20px;border-bottom:1px solid #17171733}.empty-state .num{font:12px var(--mono);color:#737279}.empty-state h2{font-family:var(--serif);font-size:clamp(30px,5vw,64px);font-weight:400;margin:0 0 14px}.empty-state p{color:#67666c;line-height:1.8;margin:0;max-width:560px}
+    .detail{background:var(--paper);color:#17171a;min-height:100vh;padding-bottom:80px}.detail-hero{position:relative;height:min(86svh,920px);min-height:560px;background:#131316;overflow:hidden;color:#fff}.detail-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.76);transform:scale(1.015)}.detail-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#09090bb8,transparent 75%),linear-gradient(0deg,#09090bb3,transparent 75%)}.detail-hero-copy{position:absolute;z-index:1;left:clamp(22px,8vw,130px);right:clamp(22px,8vw,130px);bottom:clamp(42px,8vh,100px);max-width:960px}.detail-hero-copy .eyebrow{color:#e7e5e2}.detail-hero-copy h1{font-family:var(--serif);font-size:clamp(54px,10vw,144px);font-weight:400;letter-spacing:-.06em;line-height:.96;margin:16px 0}.detail-hero-copy p{font-size:clamp(14px,1.5vw,18px);line-height:1.7;max-width:640px;color:#e4e2df;margin:0}.detail-overview{display:grid;grid-template-columns:minmax(190px,28%) 1fr;gap:8vw;padding:72px clamp(22px,8vw,130px);border-bottom:1px solid #17171726}.detail-meta{display:grid;gap:16px;align-content:start}.meta-item{border-top:1px solid #19191b3a;padding-top:12px}.meta-item span{display:block;font:9px var(--mono);letter-spacing:.16em;color:#77767c;text-transform:uppercase;margin-bottom:7px}.meta-item strong{font-size:13px;font-weight:600;line-height:1.6}.overview-copy .eyebrow{color:#78777d}.overview-copy h2{font-family:var(--serif);font-size:clamp(30px,4.7vw,60px);font-weight:400;line-height:1.28;letter-spacing:-.035em;margin:12px 0 20px;max-width:850px}.overview-copy p{font-size:15px;line-height:1.9;color:#66656b;max-width:760px;margin:0}.story-section{padding:80px clamp(22px,8vw,130px);display:grid;grid-template-columns:minmax(180px,28%) 1fr;gap:8vw;align-items:start}.story-label{position:sticky;top:100px}.story-label .eyebrow{color:#85838a}.story-label h3{font-family:var(--serif);font-size:clamp(23px,3vw,36px);font-weight:400;margin:10px 0}.story-copy{max-width:900px}.story-copy p{font-size:15px;line-height:1.9;color:#5f5e64;margin:0 0 26px}.story-image{width:100%;max-height:78vh;object-fit:cover;cursor:zoom-in;background:#ddd}.story-image.contain{object-fit:contain;background:#19191a;max-height:100vh}.image-caption{margin:11px 0 35px;color:#77767a;font-size:11px;letter-spacing:.04em}.image-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:34px 0}.image-pair .story-image{height:clamp(240px,36vw,540px)}.image-pair .story-image.tall{height:clamp(240px,45vw,620px)}.detail-video{width:100%;display:block;background:#111;margin:32px 0 12px;max-height:80vh}.board-stack{display:grid;grid-template-columns:1fr;gap:18px;margin-top:32px}.board-stack img{width:100%;height:auto;cursor:zoom-in;background:#18181a}.project-nav{display:flex;justify-content:space-between;gap:15px;margin:30px clamp(22px,8vw,130px) 0;padding-top:22px;border-top:1px solid #17171740}.project-nav button{border:0;background:none;color:#161619;cursor:pointer;text-align:left;font-size:13px;padding:10px 0}.project-nav button:last-child{text-align:right}.project-nav button span{display:block;font:9px var(--mono);letter-spacing:.16em;color:#77767c;margin-bottom:7px}.project-nav button strong{font-weight:600}
+    .about-page{background:#101013;color:#f3f2ef;overflow:clip}.about-journey{height:220svh;position:relative;isolation:isolate}.about-sticky{position:sticky;top:0;height:100svh;min-height:620px;overflow:hidden;background:#101013}.about-intro{position:absolute;z-index:2;left:50%;top:46%;width:min(54vw,760px);transform:translate(-50%,-50%);text-align:center;transition:opacity .15s linear;pointer-events:none}.about-intro .eyebrow{color:#b6b4bb}.about-intro h1{font-family:var(--serif);font-size:clamp(60px,10vw,138px);font-weight:400;letter-spacing:-.06em;line-height:.98;margin:18px 0 22px}.about-lead{font-size:clamp(17px,2vw,26px);line-height:1.7;color:#e7e6e2;margin:0 auto;max-width:720px}.about-categories{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:30px}.about-categories span{border:1px solid #fff4;border-radius:999px;padding:9px 14px;font-size:11px;color:#ceccd1}.about-scatter{position:absolute;inset:0;z-index:3;pointer-events:none}.about-floating{position:absolute;left:0;top:0;width:220px;height:220px;border-radius:4px;overflow:hidden;color:#fff;box-shadow:0 18px 60px #0007;will-change:left,top,width,height,transform}.about-photo{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;background:linear-gradient(145deg,var(--tone-a),var(--tone-b))}.about-photo::before,.about-photo::after{content:"";position:absolute;border-radius:50%;width:68%;aspect-ratio:1;background:#ffffff12;filter:blur(1px)}.about-photo::after{width:38%;transform:translate(42%,38%);background:#05050827}.about-placeholder-label{position:relative;z-index:1;padding:8px 10px;border:1px solid #ffffff75;background:#08080a55;font:9px var(--mono);letter-spacing:.14em;text-transform:uppercase}.about-floating-copy{position:absolute;z-index:2;inset:auto 0 0;padding:38px 14px 13px;background:linear-gradient(transparent,#07070bdc);opacity:0;transition:opacity .2s}.about-floating-copy strong{display:block;font-size:13px}.about-floating-copy span{display:block;margin-top:5px;font-size:10px;line-height:1.5;color:#dfdee3}.about-scroll-hint{position:absolute;z-index:4;bottom:28px;left:50%;transform:translateX(-50%);font:9px var(--mono);letter-spacing:.16em;color:#b9b8be;white-space:nowrap}.about-grid{position:absolute;top:120svh;left:clamp(20px,6vw,92px);right:clamp(20px,6vw,92px);height:100svh;min-height:620px;padding:clamp(24px,4vh,50px) 0;display:grid;grid-template-rows:auto 1fr;gap:18px;opacity:0;z-index:1}.about-grid-head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid #ffffff35;padding-bottom:12px}.about-grid-head .eyebrow{color:#aaa9af}.about-grid-head h2{font-family:var(--serif);font-size:clamp(24px,3vw,40px);font-weight:400;margin:7px 0 0}.about-grid-head p{color:#b6b5bc;font-size:11px;margin:0}.about-grid-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px}.about-story-card{position:relative;min-width:0;min-height:0;overflow:hidden;background:#19191d;border:1px solid #ffffff20;border-radius:4px;color:#fff}.about-story-card .about-photo{position:absolute;inset:0}.about-story-card .about-photo::before{width:48%}.about-card-info{position:absolute;z-index:2;inset:auto 0 0;padding:42px 15px 13px;background:linear-gradient(transparent,#08080be8)}.about-card-info strong{display:block;font-size:13px}.about-card-info p{font-size:10px;color:#dad9df;line-height:1.55;margin:5px 0 0}.about-footer{padding:25px clamp(22px,5vw,80px);background:#101013;color:#8e8c93;display:flex;justify-content:space-between;gap:20px;font:9px var(--mono);letter-spacing:.12em}.back-home{position:fixed;z-index:30;left:clamp(20px,4.5vw,72px);bottom:24px;background:#151518d9;border:1px solid #ffffff27;color:#fff;border-radius:999px;padding:11px 15px;font-size:11px;backdrop-filter:blur(12px);cursor:pointer}.back-home:hover{color:var(--acid);border-color:#d7ff7380}
+    dialog.lightbox{width:min(94vw,1500px);max-width:none;max-height:94svh;border:0;padding:0;background:#09090b;color:#fff}dialog.lightbox::backdrop{background:#000e;backdrop-filter:blur(8px)}.lightbox img{max-height:86svh;width:100%;object-fit:contain}.lightbox-close{position:absolute;top:12px;right:14px;width:40px;height:40px;border:1px solid #fff7;border-radius:50%;background:#1119;color:#fff;font-size:20px;cursor:pointer}.lightbox-caption{padding:12px 18px 16px;font-size:12px;color:#cbc9ce}
+    .fade-in{animation:rise .8s both}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+    @keyframes hub-reveal{from{opacity:0;filter:blur(7px);transform:scale(1.025)}to{opacity:1;filter:blur(0);transform:scale(1)}}.hub.stage-reveal .hub-media img.is-active{animation:hub-reveal 1.2s cubic-bezier(.2,.65,.2,1) both}.cover.is-intro-stage .scrollcue{cursor:pointer}.hub.stage-reveal .hub-topline,.hub.stage-reveal .hub-center,.hub.stage-reveal .project-orbit,.hub.stage-reveal .hub-current,.hub.stage-reveal .view-project,.hub.stage-reveal .hub-back-intro,.hub.stage-reveal .hub-scroll{animation:hub-float-in .85s both}.hub.stage-reveal .hub-center{animation-delay:.1s}.hub.stage-reveal .project-orbit{animation-delay:.2s}.hub.stage-reveal .hub-current,.hub.stage-reveal .view-project{animation-delay:.3s}@keyframes hub-float-in{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}::view-transition-group(sin3-title){animation-duration:1.25s;animation-timing-function:cubic-bezier(.22,.61,.36,1)}::view-transition-old(sin3-title),::view-transition-new(sin3-title){animation-duration:1.25s}::view-transition-old(root){animation:page-soft-out 1.25s ease both}::view-transition-new(root){animation:page-soft-in 1.25s ease both}@keyframes page-soft-out{to{opacity:0}}@keyframes page-soft-in{from{opacity:0}to{opacity:1}}
+    @media(max-width:760px){.topbar{padding:18px 20px}.brand{font-size:16px}.brand small{display:none}.toplinks{gap:8px 11px;max-width:68%;justify-content:flex-end;flex-wrap:wrap}.toplinks button,.toplinks a{font-size:9px}.toplinks .nav-vibe{display:block}.cover{min-height:560px}.cover-title{font-size:clamp(86px,23vw,168px)}.hub{height:100svh;min-height:700px}.hub-topline{top:83px}.hub-back-intro{top:84px}.hub-center{top:50%;width:86vw}.hub-center h1{font-size:clamp(44px,14vw,80px)}.hub-center p{top:clamp(40px,calc(5.6vw + 22px),54px);font-size:8px;line-height:1.8}.orbit-link{font-size:12px;padding:8px 0}.orbit-link[data-project="tree"]{top:24%;left:6%}.orbit-link[data-project="eaves"]{top:35%;right:5%}.orbit-link[data-project="salt"]{bottom:27%;right:6%}.orbit-link[data-project="game"]{bottom:33%;left:7%}.hub-current{bottom:88px;left:20px;max-width:230px}.hub-current h2{font-size:25px}.hub-current p{font-size:11px}.view-project{bottom:88px;right:20px;padding:11px 14px;font-size:11px}.hub-scroll{bottom:17px}.page-light{padding:100px 18px 60px}.page-head{display:block;padding-bottom:20px}.page-head h1{font-size:58px}.page-head p{margin-top:17px;max-width:520px}.project-grid{grid-template-columns:1fr;gap:10px}.work-card{min-height:330px;aspect-ratio:1.05}.detail-hero{height:78svh;min-height:560px}.detail-hero-copy{bottom:42px}.detail-hero-copy h1{font-size:clamp(54px,17vw,100px)}.detail-overview,.story-section{display:block;padding:44px 22px}.detail-meta{grid-template-columns:1fr 1fr;gap:12px 20px;margin-bottom:40px}.story-label{position:static;margin-bottom:22px}.story-copy p{font-size:14px}.image-pair{gap:7px}.image-pair .story-image,.image-pair .story-image.tall{height:clamp(190px,56vw,360px)}.project-nav{margin:24px 22px 0}.about-sticky{min-height:700px}.about-intro{top:46%;width:82vw}.about-intro h1{font-size:20vw}.about-lead{font-size:16px;line-height:1.65}.about-categories{gap:7px;margin-top:22px}.about-categories span{font-size:10px;padding:8px 10px}.about-floating{border-radius:3px}.about-floating-copy strong{font-size:11px}.about-floating-copy span{font-size:9px}.about-grid{left:16px;right:16px;min-height:700px;gap:12px}.about-grid-items{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:8px}.about-card-info{padding:32px 9px 9px}.about-card-info strong{font-size:11px}.about-card-info p{font-size:9px}.about-grid-head p{max-width:140px;text-align:right;line-height:1.5}.about-scroll-hint{bottom:16px}.about-footer{padding:22px;flex-direction:column}.site-footer{padding:22px;flex-direction:column}.back-home{bottom:14px;left:14px}}
+    @media(max-width:390px){.toplinks{gap:7px 9px}.toplinks button,.toplinks a{font-size:9px}.orbit-link{font-size:11px}.hub-current{max-width:190px}.view-project{padding:10px 11px}}
+    @media(prefers-reduced-motion:reduce){.hub.stage-reveal .hub-media img.is-active{animation:none}::view-transition-old(*),::view-transition-new(*){animation-duration:.01ms!important}*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  
+    .story-block-figure{margin:30px 0;min-width:0}.story-block-figure img{display:block;width:100%;max-height:78vh;object-fit:cover;background:#ddd}.story-block-figure.is-contain img{object-fit:contain;background:#eeedeb;padding:clamp(10px,1.6vw,22px);max-height:82vh}.story-block-figure figcaption{margin-top:10px;color:#77767a;font-size:12px;line-height:1.6;letter-spacing:.025em}.story-block-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:34px 0}.story-block-gallery .story-block-figure{margin:0}.story-block-gallery.stack{grid-template-columns:1fr;gap:24px}
+    @media(max-width:760px){.story-block-gallery.two{grid-template-columns:1fr;gap:20px}.story-block-figure img{max-height:68svh}.story-block-figure.is-contain img{max-height:72svh}}
+  </style>
+<style id="about-journey-refresh">
+    .about-page{background:#050506;color:#f3f2ef;overflow:clip}.about-journey{height:320svh;position:relative;isolation:isolate}.about-sticky{position:sticky;top:0;height:100svh;min-height:660px;overflow:hidden;background:#050506}.about-intro{position:absolute;z-index:2;left:50%;top:46%;width:min(56vw,1040px);transform:translate(-50%,-50%);text-align:center;pointer-events:none;will-change:transform,opacity}.about-lead{font-size:clamp(18px,1.55vw,27px);line-height:1.65;color:#f0efed;margin:0 auto;max-width:100%}.about-identity{position:absolute;z-index:4;left:clamp(24px,6.5vw,132px);top:14%;width:min(72vw,1000px);text-align:left;opacity:0;transform:translateY(16px);pointer-events:none;will-change:opacity,transform}.about-identity .eyebrow{color:#b6b4bb}.about-identity h1{font-family:var(--serif);font-size:clamp(60px,10vw,138px);font-weight:400;letter-spacing:-.06em;line-height:.98;margin:18px 0 0}.about-categories{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:10px;margin-top:28px}.about-categories span{border:1px solid #ffffff45;border-radius:999px;padding:9px 14px;font-size:11px;color:#ceccd1}.about-scatter{position:absolute;inset:0;z-index:3;pointer-events:none}.about-floating{position:absolute;left:0;top:0;display:block;box-sizing:border-box;overflow:hidden;background:transparent;border:1px solid transparent;border-radius:18px;color:#fff;will-change:left,top,width,height,transform,border-radius,background-color,box-shadow}.about-photo{position:absolute;left:0;top:0;width:100%;height:100%;display:block;overflow:hidden;background:#171719;border-radius:inherit;will-change:left,top,width,height,border-radius}.about-photo::before,.about-photo::after{display:none!important}.about-photo img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;user-select:none}.about-floating .about-card-info{position:absolute;left:6%;right:6%;bottom:4%;display:flex;align-items:center;justify-content:space-between;gap:8px;opacity:0;white-space:nowrap;will-change:opacity}.about-card-info strong{font-size:clamp(12px,1.15vw,18px);font-weight:600;color:#f7f6f4}.about-card-info span{font-size:clamp(10px,.95vw,15px);color:#98979b;text-align:right}.about-scroll-hint{position:absolute;z-index:5;bottom:28px;left:50%;transform:translateX(-50%);font:9px var(--mono);letter-spacing:.16em;color:#b9b8be;white-space:nowrap;transition:opacity .2s}.about-grid{position:absolute;top:278svh;left:0;right:0;height:42svh;min-height:300px;padding:0 clamp(20px,5.8vw,96px);display:block;opacity:0;z-index:1;will-change:opacity}.about-grid-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,18px);align-items:start}.about-story-card{position:relative;min-width:0;height:clamp(300px,42svh,460px);overflow:hidden;background:#111113;border:1px solid #ffffff12;border-radius:11px;color:#fff}.about-story-card .about-photo{left:14%;top:6%;width:72%;height:77%;border-radius:13px}.about-story-card .about-card-info{position:absolute;left:6%;right:6%;bottom:4%;display:flex;align-items:center;justify-content:space-between;gap:8px}.about-footer{position:relative;z-index:0;padding:25px clamp(22px,5vw,80px);background:#050506;color:#8e8c93;display:flex;justify-content:space-between;gap:20px;font:9px var(--mono);letter-spacing:.12em}
+    @media(max-width:760px){.about-journey{height:210svh}.about-sticky{min-height:680px}.about-intro{top:46%;width:84vw}.about-lead{font-size:clamp(16px,4.2vw,20px);line-height:1.65}.about-identity{left:8vw;top:14%;width:84vw}.about-identity h1{font-size:clamp(60px,18vw,94px);margin-top:15px}.about-categories{gap:7px;margin-top:24px}.about-categories span{font-size:10px;padding:8px 10px}.about-floating .about-card-info strong{font-size:11px}.about-floating .about-card-info span{font-size:9px}.about-scroll-hint{bottom:16px}.about-grid{top:128svh;height:82svh;min-height:580px;padding:0 6vw}.about-grid-items{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,clamp(230px,32svh,330px));gap:8px}.about-story-card{height:clamp(230px,32svh,330px);border-radius:9px}.about-story-card:nth-child(3){grid-column:1/-1;width:calc((100% - 8px)/2);justify-self:center}.about-story-card .about-photo{left:14%;top:6%;width:72%;height:77%;border-radius:10px}.about-story-card .about-card-info{gap:5px}.about-story-card .about-card-info strong{font-size:11px}.about-story-card .about-card-info span{font-size:9px}}
+    @media(prefers-reduced-motion:reduce){.about-journey{height:auto}.about-sticky{position:relative;height:auto;min-height:100svh;padding:20vh 0 8vh}.about-intro{position:relative;left:auto;top:auto;width:min(84vw,720px);margin:0 auto;transform:none!important;opacity:1!important}.about-identity{display:none}.about-scatter,.about-scroll-hint{display:none}.about-grid{position:relative;top:auto;height:auto;min-height:0;padding:24px 6vw;opacity:1!important}.about-grid-items{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none}.about-story-card{height:clamp(230px,32svh,330px)}.about-story-card:nth-child(3){grid-column:auto;width:auto}.about-footer{position:relative}}
+
+
+</style>
+
+  <style id="about-continuous-six-cards">
+    .about-page{background:#050506;color:#f3f2ef;overflow:clip}
+    .about-journey{height:auto!important;position:relative;isolation:isolate}
+    .about-intro-stage{position:relative;height:100svh;min-height:100svh;display:grid;place-items:center;isolation:isolate}
+    .about-intro{position:relative;left:auto;top:auto;z-index:3;width:min(56vw,1040px);transform:none;text-align:center;pointer-events:none;will-change:transform,opacity}
+    .about-lead{font-size:clamp(18px,1.55vw,27px);line-height:1.65;color:#f0efed;margin:0 auto;max-width:100%}
+    .about-scroll-hint{position:absolute;z-index:2;bottom:28px;left:50%;transform:translateX(-50%);font:9px var(--mono);letter-spacing:.16em;color:#b9b8be;white-space:nowrap;transition:opacity .2s}
+    .about-content-stage{position:relative;z-index:1;padding:14svh clamp(20px,5.8vw,96px) 10svh;isolation:isolate}
+    .about-identity{position:relative;left:auto;top:auto;z-index:1;width:min(72vw,1000px);text-align:left;opacity:0;transform:translateY(16px);pointer-events:none;will-change:opacity,transform}
+    .about-identity .eyebrow{color:#b6b4bb}
+    .about-identity h1{font-family:var(--serif);font-size:clamp(60px,10vw,138px);font-weight:400;letter-spacing:-.06em;line-height:.98;margin:18px 0 0}
+    .about-categories{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:10px;margin-top:28px}
+    .about-categories span{border:1px solid #ffffff45;border-radius:999px;padding:9px 14px;font-size:11px;color:#ceccd1}
+    .about-grid{position:relative;top:auto;left:auto;right:auto;z-index:2;height:auto;min-height:0;padding:0;margin-top:clamp(120px,24svh,250px);opacity:1;will-change:auto}
+    .about-grid-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:clamp(300px,42svh,460px);gap:clamp(10px,1.2vw,18px);align-items:start;overflow:visible;pointer-events:none}
+    .about-story-card{position:relative;min-width:0;height:clamp(300px,42svh,460px);overflow:hidden;background:#111113;border:1px solid #ffffff12;border-radius:11px;color:#fff;transform-origin:center center;will-change:transform}
+    .about-grid-items[data-scatter-settled="true"]{pointer-events:auto}
+    .about-story-card .about-photo{left:14%;top:6%;width:72%;height:77%;border-radius:13px;transition:none}
+    .about-story-card .about-photo img{transition:transform .42s cubic-bezier(.22,.61,.36,1);transform:scale(1);transform-origin:center;will-change:transform}
+    .about-photo{position:absolute;display:block;overflow:hidden;background:#171719;border-radius:inherit}
+    .about-photo img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;user-select:none}
+    .about-card-info{position:absolute;z-index:2;left:6%;right:6%;bottom:4%;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0;background:none;opacity:0;white-space:nowrap;will-change:opacity}
+    .about-card-info strong{font-size:clamp(12px,1.15vw,18px);font-weight:600;color:#f7f6f4}
+    .about-card-info span{font-size:clamp(10px,.95vw,15px);color:#98979b;text-align:right}
+    .about-grid-items[data-scatter-settled="true"] .about-story-card:hover .about-photo img{transform:scale(1.045)}
+    .about-footer{position:relative;z-index:0;padding:25px clamp(22px,5vw,80px);background:#050506;color:#8e8c93;display:flex;justify-content:space-between;gap:20px;font:9px var(--mono);letter-spacing:.12em}
+    @media(max-width:760px){.about-intro{width:84vw}.about-lead{font-size:clamp(16px,4.2vw,20px);line-height:1.65}.about-content-stage{padding:14svh 6vw 9svh}.about-identity{width:84vw}.about-identity h1{font-size:clamp(60px,18vw,94px);margin-top:15px}.about-categories{gap:7px;margin-top:24px}.about-categories span{font-size:10px;padding:8px 10px}.about-scroll-hint{bottom:16px}.about-grid{margin-top:clamp(90px,20svh,170px)}.about-grid-items{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:clamp(230px,32svh,330px);gap:8px}.about-story-card{height:clamp(230px,32svh,330px);border-radius:9px}.about-story-card .about-photo{left:14%;top:6%;width:72%;height:77%;border-radius:10px}.about-card-info{gap:5px}.about-card-info strong{font-size:11px}.about-card-info span{font-size:9px}.about-footer{padding:22px;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){.about-intro{opacity:1!important;transform:none!important}.about-identity{display:block!important;opacity:1!important;transform:none!important}.about-card-info{opacity:1!important}.about-story-card,.about-story-card .about-photo,.about-story-card .about-photo img{transition:none!important}}
+  </style>
+  <style id="project-detail-enhancements">
+    .story-subheading{margin:32px 0 12px;font-size:15px;font-weight:650;line-height:1.6;color:#29282d;letter-spacing:.015em}
+    .story-board-stack{display:grid;grid-template-columns:1fr;gap:18px;margin:28px 0 38px}
+    .story-board-stack img{display:block;width:100%;height:auto;background:#eeedeb;cursor:zoom-in}
+    .story-pdf{margin:32px 0 40px;border:1px solid #17171725;background:#e9e8e5}
+    .story-pdf-head{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 18px;font-size:12px}
+    .story-pdf-head a{color:#37363b;text-underline-offset:3px;white-space:nowrap}
+    .story-pdf iframe{display:block;width:100%;height:min(82svh,1000px);border:0;background:#f4f3f1}
+    .detail-hero-copy h1.is-long-title{max-width:980px;font-size:clamp(38px,5.7vw,78px);line-height:1.16;letter-spacing:-.045em}
+    @media(max-width:760px){.detail-hero-copy h1.is-long-title{font-size:clamp(34px,9.2vw,56px);line-height:1.2}.story-subheading{margin-top:27px}.story-pdf iframe{height:62svh}.story-pdf-head{align-items:flex-start;flex-direction:column;gap:7px;padding:13px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#intro" aria-label="返回 SIN3 首页">SIN3<small>PORTFOLIO</small></a>
+    <nav class="toplinks" aria-label="主导航">
+      <button data-nav-category="environment">环境设计</button>
+      <button data-nav-category="game">游戏策划</button>
+      <button class="nav-vibe" data-nav-category="vibe">Vibe Coding</button>
+      <button data-nav-about>ABOUT</button>
+    </nav>
+  </header>
+  <main id="app"></main>
+  <dialog class="lightbox" id="lightbox"><button class="lightbox-close" aria-label="关闭图片">×</button><img alt=""><div class="lightbox-caption"></div></dialog>
+  <script>
+    const A = './assets/';
+    const projects = {
+      tree: {
+        id:'tree', title:'树荫', en:'SHADE / REST SPACE', category:'环境设计', type:'课程设计', location:'四川美术学院虎溪校区南门附近', cover:'tree-01.webp', images:['tree-01.webp','tree-02.webp','tree-03.webp','tree-04.webp','tree-05.webp'],
+        summary:'在校园树林中设计一处休憩空间，让构筑形体围绕现有树木展开，并将停留、仰望与穿行纳入同一段场地体验。', overview:'让构筑顺着树木生长，形成可以停靠、穿行与仰望的休憩空间。',
+        conceptTitle:'把走进树林时的安静感留在日常里', concept:'让人更容易走近、接触并停留在这片树荫下，在校园日常中拥有一小段放松的时间。',
+        tags:['校园休憩空间','空间装置'],
+        sections:[
+          {title:'想保留的一瞬间', label:'01 / INTENT', blocks:[
+            {type:'text',text:'场地位于四川美术学院虎溪校区南门附近。周围有人流和车声，走进树木之间，却能短暂地感到安静：阳光落在草地上，能听到鸟叫和叶片的声音，也能闻到泥土与植物的气味。'},
+            {type:'text',text:'我想保留这种从嘈杂中进入自然的瞬间。设计的核心是让人更容易走近、接触并停留在这片树荫下，在校园日常中拥有一小段放松的时间。'},
+            {type:'image',src:'tree-site-idea.webp',alt:'四川美术学院虎溪校区树林场地实景',caption:'场地实拍｜阳光、树木与地被构成的日常自然感'}
+          ]},
+          {title:'以树之间的空间决定形态', label:'02 / FORM', blocks:[
+            {type:'text',text:'构筑物以场地原有的树木和植物为出发点，顺着树与树之间自然形成的空间展开。曲线连接并围绕树木，使新的形态看起来像从树间延伸出来。'},
+            {type:'image',src:'tree-form-plan.webp',fit:'contain',alt:'树荫空间装置的树间形态分析图',caption:'形态关系｜以树木和树间空间为构筑展开依据'},
+            {type:'text',text:'形态内外呈现不同感受：外侧较明确的折线形成边界；进入内部后，地面、围合面和树池转为更平缓的曲线，希望给停留的人一种柔和、被包容的感觉。'},
+            {type:'gallery',layout:'two',items:[
+              {src:'tree-03.webp',alt:'树荫构筑物外侧曲面与树林效果图',caption:'外侧形态｜以较明确的边界回应靠近树林的过程'},
+              {src:'tree-02.webp',alt:'树荫构筑物围绕树木展开的近景效果图',caption:'树间空间｜曲面顺着现有树木与植物展开'}
+            ]}
+          ]},
+          {title:'两种接触自然的方式', label:'03 / USE', blocks:[
+            {type:'text',text:'沿树木形成的围合空间设置可坐靠的位置，让人可以在树下停留。中间的网面提供躺卧的可能：身体由网面承托，同时能感到树荫、空气和周围植物。设计希望让接触自然这件事变得更直接，也更容易发生在平常经过这里的人身上。'},
+            {type:'image',src:'tree-04.webp',alt:'树荫项目网面休憩空间的俯视效果图',caption:'网面停留｜在树下躺卧，感受枝叶、光线与空气'},
+            {type:'text',text:'方案中还有圆盘平台，作为活动与释放身体的空间。坐、靠、躺和活动共同构成树下的不同使用方式。'},
+            {type:'image',src:'tree-platform.webp',alt:'树荫空间装置圆盘平台效果图',caption:'圆盘平台｜为攀爬、活动与释放身体提供空间'}
+          ]},
+          {title:'用少量介入回应原有环境', label:'04 / MATERIAL', blocks:[
+            {type:'text',text:'设计希望通过相对轻的改造改善原本不易到达、不易停留的状况，同时保留这片场地已有的自然感。材料设想考虑竹、麻等触感较温和的方向，具体做法以最终方案为准。'},
+            {type:'image',src:'tree-05.webp',alt:'树荫构筑与原有树木共同形成休憩空间的效果图',caption:'树林中的方案｜构筑与现有树木共同形成休憩空间'}
+          ]},
+          {title:'完整方案', label:'05 / PROPOSAL', blocks:[
+            {type:'text',text:'最终方案以树木位置组织连贯的曲面构筑与休憩节点，让树池围合、坐靠、网面和圆盘活动空间彼此连接。'},
+            {type:'text',text:'平面与立面呈现构筑物围绕树木展开的整体关系；鸟瞰与效果图则从不同角度展示外侧边界、内部停留，以及坐下、躺卧和活动时的空间体验。'},
+            {type:'image',src:'tree-aerial-solution.webp',alt:'树荫空间装置整体鸟瞰效果图',caption:'整体鸟瞰｜构筑围绕树木形成连续的休憩空间'},
+            {type:'image',src:'tree-plan-final.webp',fit:'contain',alt:'树荫空间装置完整平面图',caption:'平面图｜树木、网面、树池与圆盘空间的组织关系'},
+            {type:'gallery',layout:'stack',items:[
+              {src:'tree-01.webp',fit:'contain',alt:'树荫空间装置整体效果图',caption:'整体效果｜构筑形态在树林中展开'},
+              {src:'tree-elevation-net.webp',fit:'contain',alt:'树荫空间装置结构立面图',caption:'结构立面｜结构线框与围合形态的关系'}
+            ]}
+          ]}
+        ]
+      },
+      eaves: {
+        id:'eaves', title:'屋檐下', en:'UNDER THE EAVES', category:'环境设计', type:'小组课程项目', cover:'eaves-01.webp', images:['eaves-01.webp','eaves-02.webp','eaves-03.webp','eaves-04.webp','eaves-05.webp'],
+        summary:'川美南门商业街场地规划，以“屋檐下”为线索组织商业、休憩与社区交流空间。', overview:'从连续屋檐和巷道出发，把街铺、活动与日常停留连接起来。',
+        tags:['场地与功能','商业街场地规划','小组项目'],
+        internalRoles:'整体概念、设计灵感与草图；右侧大屋顶建筑；中部巷子概念建筑；路面铺装；展板排版。',
+        sections:[
+          {title:'整体场地', label:'01 / SITE', text:'项目以连续的建筑与开放空间连接街道功能。屋檐、台阶、铺装和停留区域共同形成可穿行的公共场地。', image:'eaves-01.webp', caption:'场地整体｜大屋顶形成醒目的公共界面'},
+          {title:'街道与屋檐', label:'02 / STREET', text:'建筑界面回应街道的日常使用，屋檐下的空间承接商业活动、短暂停留和行走。', pair:['eaves-02.webp','eaves-04.webp'], caption:'街道界面与屋檐下的活动空间'},
+          {title:'巷子与铺装', label:'03 / PASSAGE', text:'中部建筑以巷子作为空间概念，铺装和台阶把不同建筑与场地节点串联起来。', pair:['eaves-03.webp','eaves-05.webp'], caption:'中庭、巷道与场地铺装'}
+        ]
+      },
+      salt: {id:'salt', title:'稻香虾跃处', en:'RICE & SHRIMP', category:'环境设计', type:'竞赛概念方案', cover:'new/rice-asset-03.webp', images:['new/rice-asset-03.webp'], summary:'稻虾主题的食农教育与乡村体验场景设计。', tags:['稻虾主题','食农教育','乡村体验'], sections:[]},
+      game: {
+        id:'game', title:'浮岚——雾与镜', en:'FOG & MIRROR', category:'游戏策划', type:'高概念游戏企划', cover:'game-isometric.webp', images:['game-isometric.webp','game-map.webp','game-route.webp','game-flow.webp'],
+        summary:'在雾中盆地展开的探索解谜企划。玩家通过镜面引导天光，逐步开启新的探索路径。', overview:'借镜面引导天光，使探索路线随玩家的观察与解谜逐步打开。',
+        tags:['世界观设定','探索解谜','镜面与天光机制'],
+        sections:[
+          {title:'雾中盆地', label:'01 / WORLD', text:'企划以被雾覆盖的盆地作为探索空间，通过地图、地貌和场景节点组织玩家的发现过程。', image:'game-isometric.webp', caption:'场景轴测｜盆地地形与探索空间'},
+          {title:'路径与地点', label:'02 / MAP', text:'区域地图将路线、地点和探索目标放在同一套空间关系中。', pair:['game-map.webp','game-route.webp'], caption:'区域地图与探索路线'},
+          {title:'光与镜', label:'03 / MECHANIC', text:'镜面反射将天光引向不同位置，玩家据此打开暂时出现的路径，并在资源限制下安排探索顺序。', image:'game-flow.webp', caption:'玩法流程｜从发现线索到开启路径'}
+        ]
+      }
+    };
+    Object.assign(projects, {
+      eaves: {
+        id:'eaves', title:'屋檐下', en:'UNDER THE EAVES', category:'环境设计', type:'小组课程设计', cover:'new/eaves-cover-hd.png', images:['new/eaves-cover-hd.png','eaves-01.webp','eaves-02.webp','eaves-03.webp','new/eaves-04-home.jpg','eaves-05.webp'],
+        summary:'以起伏的折板屋顶、开放的街巷和层次丰富的停留空间，将餐饮、创作与社群活动连接起来，让学生、居民与访客在同一片屋檐下自然相遇。',
+        conceptTitle:'从经过一条街，到在屋檐下共享日常', concept:'以四川美术学院南门商业街为场地，通过起伏的折板屋顶、开放的街巷和层次丰富的停留空间，将餐饮、创作与社群活动连接起来，让学生、居民与访客在同一片屋檐下自然相遇。',
+        tags:['公共空间','商业街更新','小组课程设计'], location:'重庆 · 四川美术学院南门商业街',
+        internalRoles:'小组课程设计；我负责整体概念、灵感与草图、右侧大屋顶建筑、中部巷子概念建筑、铺装及展板排版。',
+        sections:[
+          {title:'把共同生活放在屋檐下',label:'01 / INTENT',blocks:[
+            {type:'text',text:'“屋檐下”从日常生活中的一个场景出发：人们可以在这里避雨、等人、聊天，也可以坐下来，看一会儿街上发生的事情。这些短暂而自然的停留，是人与人建立联系的开始。'},
+            {type:'text',text:'屋檐因此成为整个方案的起点。它覆盖建筑，也向街道与广场延伸，在室内外之间留出可以自由进入的空间，让一顿饭、一次展览或一场偶然的交谈，都有机会发生。'},
+            {type:'text',text:'场地位于校园南门附近，连接校园生活与周边街区。不同人群在这里经过、消费、工作，却未必有机会共享一段时间。设计希望通过建筑与公共空间的重新组织，让商业街拥有更多容纳日常交往的位置。'},
+            {type:'image',src:'new/eaves-context-01.png',alt:'四川美术学院虎溪校区周边与南门商业街的场地位置分析图',fit:'contain',caption:'场地位置｜从校区及周边街区看南门商业街的空间关系。'},
+            {type:'image',src:'new/eaves-context-02.png',alt:'四川美术学院南门商业街周边交通与步行范围分析图',fit:'contain',caption:'交通联系｜公共交通、步行范围与校园入口的关系。'}
+          ]},
+          {title:'让屋顶延伸出可以停留的空间',label:'02 / ROOF',blocks:[
+            {type:'text',text:'折板屋顶以不同的高度和倾斜方向贯穿街区，在连续的建筑形态中形成变化。檐下的空间随之收放：有的面向广场展开，有的沿街形成遮蔽，有的在建筑之间留下穿行的入口。'},
+            {type:'text',text:'从远处看，起伏的屋面形成街区的整体轮廓；走到近处，檐口的高低、建筑间的开口与台阶，进一步引导身体与空间的接触。'},
+            {type:'image',src:'eaves-02.webp',alt:'折板屋顶与街区建筑体量的现场视角',caption:'折板屋顶｜屋顶形态与建筑体量共同形成连续的檐下空间。'},
+            {type:'text',text:'这些半室外空间承担遮阳避雨的功能，也为坐靠、等候和小型聚会提供场所。屋顶下方保留开放的视线，让路过的人能够看到室内的展览、工作与日常活动，决定是否走近、进入或停留。'},
+            {type:'image',src:'new/roof-section.webp',fit:'contain',alt:'屋顶高差与建筑沿场地展开的剖面图',caption:'屋顶高差｜剖面呈现建筑沿场地的展开与檐下空间。'}
+          ]},
+          {title:'让不同的日常彼此相邻',label:'03 / PROGRAM',blocks:[
+            {type:'text',text:'街区由餐饮休憩、艺术工作与展览、社群活动三个部分组成。不同功能沿街展开，通过公共空间相互连接。'},
+            {type:'image',src:'new/roof-functional-overview.webp',fit:'contain',alt:'屋檐下沿街公共活动的功能分区图',caption:'功能分区｜沿街组织不同的公共活动。'},
+            {type:'subheading',text:'餐饮与休憩'},
+            {type:'text',text:'社区食堂、餐吧与茶咖结合户外用餐区、共享长桌和小桌座位，为独处、结伴与临时停留提供不同选择。吃饭与休息成为进入街区最日常的方式，也为交谈创造机会。'},
+            {type:'image',src:'new/eaves-dining.jpg',alt:'屋檐下餐饮休憩空间与沿街步行场景效果图',caption:'餐饮与休憩｜餐饮空间面向街道和广场展开。'},
+            {type:'subheading',text:'艺术工作与展览'},
+            {type:'text',text:'工作室、小型绘画空间和艺术展览区，将创作过程带入街道。人在经过时可以看到正在发生的工作，也可以走进展览、参加小组活动，让校园中的艺术实践与街区生活产生联系。'},
+            {type:'subheading',text:'社群活动'},
+            {type:'text',text:'阶梯座席、户外讨论区、共享观影区与共享客厅，为不同规模的聚集留出空间。这里既可以承接有组织的活动，也允许几个人坐下聊天，让场地在平日与活动期间都能被使用。'},
+            {type:'image',src:'new/eaves-community.jpg',alt:'屋檐下阶梯座席与社群交流空间效果图',caption:'社群活动｜阶梯、平台与庭院容纳不同规模的相聚。'},
+            {type:'text',text:'建筑体量按大、中、小组合：较大的空间容纳复合商业与公共活动，中型空间安排创意工坊与轻餐饮，小体量则穿插书吧、艺廊等业态。功能的差异，也带来步行过程中尺度与节奏的变化。'},
+            {type:'image',src:'new/roof-behaviour.webp',fit:'contain',alt:'屋檐下用餐、工作与交流的人群行为分析图',caption:'日常活动｜用餐、工作与交流的空间安排。'}
+          ]},
+          {title:'让街巷连接，也让人停下来',label:'04 / STREET',blocks:[
+            {type:'text',text:'铺地组织行走方向，座椅与花池界定停留的位置。水池、树木和种植带穿插其间，使入口、转角和建筑边缘成为可被使用的地方。街区的公共生活由这些分散的小空间共同承载。'},
+            {type:'image',src:'eaves-04.webp',alt:'屋檐下街巷、花池与座椅的场景',caption:'停留空间｜台阶、花池与座椅为行走中的停留提供位置。'},
+            {type:'text',text:'建筑之间的街巷、楼梯和平台，将沿街空间与内部庭院连接起来。人在行走中可以选择继续穿过，也可以转入较安静的角落，或沿台阶到达上层公共空间。'},
+            {type:'text',text:'室内与外部广场保持视线联系。展览、用餐和交流能够被街上的人感知，建筑内部的活动也因此向外延伸。'},
+            {type:'image',src:'eaves-05.webp',alt:'屋檐下建筑、街巷与庭院的步行联系',caption:'步行联系｜建筑、街巷和庭院共同组织街区内部的步行联系。'}
+          ]},
+          {title:'把植物与雨水带入日常',label:'05 / LANDSCAPE',blocks:[
+            {type:'text',text:'植物从地面延伸到平台和建筑边缘，柔化建筑的界面，也在活动空间之间形成自然的过渡。'},
+            {type:'image',src:'eaves-03.webp',alt:'屋檐下庭院植物、台阶与水面共同形成的停留空间效果图',caption:'庭院种植｜植物与台阶、水面共同形成停留空间。'},
+            {type:'text',text:'木质表面、浅色墙体与深灰色屋面共同构成相对克制的材料基调，让树木、水面和人的活动成为近距离体验的一部分。'},
+            {type:'image',src:'new/roof-materials.webp',fit:'contain',alt:'屋檐下建筑表面的材料与色彩分析图',caption:'材料分析｜建筑表面的材质与色彩。'},
+            {type:'text',text:'折角坡屋顶同时参与雨水的组织。方案设想将屋面径流通过檐沟收集、导流，一部分进入场地内的小型景观水池，另一部分引向沿街与巷道两侧的种植花坛。屋顶、绿化与水景因此形成关联：人在檐下避雨，也能感受到雨水、植物和街区空间之间的联系。'},
+            {type:'image',src:'new/roof-rainwater.webp',fit:'contain',alt:'屋面雨水收集并导向水池与种植带的分析图',caption:'雨水分析｜屋面与场地之间的导流设想。'}
+          ]},
+          {title:'完整方案',label:'06 / FINAL BOARDS',blocks:[
+            {type:'text',text:'总体规划、平面与剖面共同呈现屋顶、建筑、街巷和景观之间的关系。两张展板分别展开设计理念与环境策略，以及功能组织、人群活动和空间构成。'},
+            {type:'subheading',text:'展板 01｜共同生活的空间构想'},
+            {type:'text',text:'总体鸟瞰、设计说明、场地背景、植物与材料、雨水组织及日照分析。'},
+            {type:'image',src:'new/roof-board-01-thumb.webp',zoomSrc:'new/roof-board-01.jpg',fit:'contain',alt:'屋檐下完整方案展板01：共同生活的空间构想',caption:'完整方案展板 01｜共同生活的空间构想。'},
+            {type:'subheading',text:'展板 02｜从功能到日常使用'},
+            {type:'text',text:'功能分区、人群行为、活动空间、平剖面、整体爆炸图与关键场景。'},
+            {type:'image',src:'new/roof-board-02-thumb.webp',zoomSrc:'new/roof-board-02.jpg',fit:'contain',alt:'屋檐下完整方案展板02：从功能到日常使用',caption:'完整方案展板 02｜从功能到日常使用。'},
+            {type:'text',text:'四川美术学院 · 专业设计 2——场地与功能 · 小组课程设计 · 重庆 · 四川美术学院南门商业街'}
+          ]}
+        ]
+      },
+      salt: {
+        id:'salt', title:'稻香虾跃处', detailTitle:'稻香虾跃处，亲地田歌织梦来', en:'RICE & SHRIMP', category:'环境设计', type:'竞赛概念方案', cover:'new/rice-asset-03.webp', images:['new/rice-asset-03.webp','new/rice-asset-05.webp','new/rice-asset-04.webp','new/rice-asset-11.webp'],
+        summary:'以稻虾生产为线索，将食农教室、合家欢大自然厨房与稻田观景台置入田间。通过观察、学习、动手烹饪与登高远望，让人理解食物从哪里来，也重新接触食物背后的土地与劳动。',
+        conceptTitle:'让一片稻田成为可以走近的课堂', concept:'以稻虾生产为线索，将食农教室、合家欢大自然厨房与稻田观景台置入田间。通过观察、学习、动手烹饪与登高远望，让人理解食物从哪里来，也重新接触食物背后的土地与劳动。',
+        tags:['稻虾主题','食农教育','乡村体验'], location:'稻田场地 · 食农体验节点',
+        sections:[
+          {title:'从稻虾生产走向共同参与',label:'01 / THREE NODES',blocks:[
+            {type:'text',text:'一片稻田承载着生长、劳作与收获。对于来到这里的人，田间的生产过程也可以成为认识自然、理解食物和参与乡村生活的入口。'},
+            {type:'image',src:'new/rice-asset-09.webp',alt:'稻田场地中的共享空间效果',caption:'田间整体效果'},
+            {type:'text',text:'设计围绕稻虾展开，将农业生产与研学、餐饮和公共活动联系起来。人在教室中认识田间生态，在厨房里接触食材与烹饪，再从观景台回望整片稻田，将分散的知识与体验连接成对这片土地的理解。'},
+            {type:'text',text:'三个空间分别回应学习、共同制作与观察的需要。它们通过架空步道相连，在田间形成由静到动、再回到静的空间节奏。'},
+            {type:'image',src:'new/salt-fig-32.png',fit:'contain',alt:'三个空间节点沿田间步道相连的总体鸟瞰图',caption:'总体鸟瞰｜三个空间沿田间步道相连。'}
+          ]},
+          {title:'食农教室：让窗外成为教材',label:'02 / FOOD & FARM CLASSROOM',blocks:[
+            {type:'text',text:'教室采用架空的形式，回应稻田与水系的连续性。'},
+            {type:'gallery',layout:'two',items:[
+              {src:'new/salt-fig-09.jpg',fit:'contain',alt:'架空教室与稻田的空间关系效果图',caption:'架空课堂｜教室面向田间展开。'},
+              {src:'new/salt-fig-51.jpg',fit:'contain',alt:'架空教学空间与田间环境的鸟瞰效果',caption:'田间视角｜架空空间与周边稻田的关系。'}
+            ]},
+            {type:'text',text:'讲堂、观景平台和连接栈桥面向田间展开，使室内的讲解可以与窗外的真实环境对应。水稻的生长、田间的变化与生产劳动，都成为可以直接观察的内容。'},
+            {type:'gallery',layout:'two',items:[
+              {src:'new/salt-fig-18.jpg',fit:'contain',alt:'田间栈桥、平台与遮阳网面场景',caption:'田间平台｜栈桥与红色网面共同形成的空间。'},
+              {src:'new/salt-fig-11.png',fit:'contain',alt:'田间架空步道与红色遮阳构件场景',caption:'架空步道｜步道平台连接田间空间。'}
+            ]},
+            {type:'image',src:'new/salt-fig-26.png',fit:'contain',alt:'食农教室节点的平面与立面图纸',caption:'图纸｜食农教室的平面与立面。'},
+            {type:'text',text:'食农教室的形态从虾笼中获得启发，通过骨架与编织的关系，将稻虾生产中的日常器物转化为空间语言。'},
+            {type:'image',src:'new/salt-fig-58.png',fit:'contain',alt:'食农教室构筑形成过程分析图',caption:'构筑过程｜从路径、支点到平台的形成。'},
+            {type:'gallery',layout:'two',items:[
+              {src:'new/salt-fig-04.png',fit:'contain',alt:'食农教室空间构件分解图',caption:'构件分解｜支撑、平台与遮阳构件的组成。'},
+              {src:'new/salt-fig-10.png',fit:'contain',alt:'食农教室空间与构件分层图',caption:'空间与构件分层｜平台、支撑与遮阳构件的分解关系。'}
+            ]},
+            {type:'text',text:'屋顶与可调节的遮阳构件共同形成遮蔽。红色网纱在支点之间张拉，以不同的曲线连接结构与平台，也让人在远处能够辨认这处田间课堂。'},
+            {type:'image',src:'new/salt-fig-31.png',fit:'contain',alt:'网纱支点、张拉与形态变化分析图',caption:'网纱原理｜支点、张拉与形态变化。'}
+          ]},
+          {title:'合家欢：把认识变成一起动手',label:'03 / FAMILY KITCHEN',blocks:[
+            {type:'text',text:'合家欢大自然厨房延续食农教室中的学习，将体验推进到食材处理、烹饪与分享。'},
+            {type:'gallery',layout:'two',items:[
+              {src:'new/salt-fig-35.jpg',fit:'contain',alt:'合家欢大自然厨房整体效果图',caption:'整体效果｜厨房空间在田间展开。'},
+              {src:'new/salt-fig-33.jpg',fit:'contain',alt:'合家欢共享厨房中的内部活动场景',caption:'内部活动｜共享厨房中的停留与协作。'}
+            ]},
+            {type:'text',text:'半开放的厨房划分为食材处理区、烹饪体验区和共享长桌区。洗切、备料、教学示范、家庭实践与共同用餐依次展开，让参与者通过具体的动作，体验从田间到餐桌的过程。'},
+            {type:'image',src:'new/salt-fig-34.png',fit:'contain',alt:'食材处理、烹饪体验与共享长桌的功能流程图',caption:'功能流程｜食材处理、烹饪体验与共享长桌。'},
+            {type:'text',text:'建筑在竖向上组织不同活动：一层为活动大厅，二层安排共享厨房，上层提供观景平台。楼梯连接各层。'},
+            {type:'image',src:'new/salt-fig-45.png',fit:'contain',alt:'活动大厅、共享厨房与上层平台的竖向组织图',caption:'竖向组织｜活动大厅、共享厨房与上层平台的关系。'},
+            {type:'text',text:'滑梯加入儿童活动与亲子互动的可能，使烹饪之外也有可以玩耍、等待和交流的位置。厨房希望容纳共同完成一件事的过程。家庭成员、研学参与者与活动组织者可以围绕食材展开协作，再回到长桌边分享劳动的结果。'},
+            {type:'image',src:'new/salt-fig-56.jpg',fit:'contain',alt:'合家欢厨房旁的滑梯与田间亲子活动场景',caption:'滑梯与活动｜为儿童和亲子互动留出活动空间。'}
+          ]},
+          {title:'观景台：重新看见整片稻田',label:'04 / VIEWPOINT',blocks:[
+            {type:'text',text:'稻田观景台承接教室与厨房之间的步道，也为连续的活动提供一个安静的停留点。'},
+            {type:'image',src:'new/salt-fig-54.jpg',fit:'contain',alt:'连接观景台的田间步道与平台外部场景',caption:'观景步道｜架空步道连接田间与观景平台。'},
+            {type:'text',text:'平台将视线抬高，让人从接近稻穗的观察转向对田块、水系和建筑关系的整体感知。经历学习与动手之后，重新望向稻田，眼前的风景也有了更具体的内容。'},
+            {type:'text',text:'斜向支撑、平台、栏杆与编织遮阳构件组成开放的空间。遮阳面在高处起伏，保留与天空、风和周围景色的联系；平台则提供停留、交谈与远望的位置。'},
+            {type:'image',src:'new/salt-fig-50.jpg',fit:'contain',alt:'观景平台的栏杆、支撑与红色遮阳构件场景',caption:'登高视野｜平台、支撑与遮阳共同形成远望空间。'}
+          ]},
+          {title:'亲地俭朴，让空间回应土地',label:'05 / DESIGN VALUES',blocks:[
+            {type:'text',text:'方案以“亲、地、俭、朴”作为空间设计的出发点。'},
+            {type:'subheading',text:'亲｜重新建立接触'}, {type:'text',text:'通过学习、劳动和共享餐食，让人与人、人与土地之间产生直接联系。'},
+            {type:'subheading',text:'地｜顺应场地与乡村经验'}, {type:'text',text:'从稻田、水系与生产器物中寻找设计线索，让空间的形态和用途与所在环境有关。'},
+            {type:'subheading',text:'俭｜控制介入的规模'}, {type:'text',text:'以集中设置的活动节点、架空平台与连接步道组织体验，探索轻介入的营造方式。'},
+            {type:'subheading',text:'朴｜回到具体的生活'}, {type:'text',text:'将观察生长、处理食材、共同用餐和田间休息作为空间内容，让乡村体验建立在可以参与的日常之上。'},
+            {type:'image',src:'new/salt-fig-12.png',fit:'contain',alt:'亲、地、俭、朴四项空间设计方法图',caption:'亲地俭朴｜以四项设计取向组织空间体验。'},
+            {type:'text',text:'三个节点使用相互呼应的骨架、平台与编织遮阳语言，同时根据教学、烹饪和观景的需要形成不同的空间形态。'},
+            {type:'image',src:'new/salt-fig-23.png',fit:'contain',alt:'稻虾体验空间与场地环境关系分析图',caption:'场地关系｜三个节点与田间环境的联系。'}
+          ]},
+          {title:'让空间持续被使用',label:'06 / OPERATION PROPOSAL',blocks:[
+            {type:'text',text:'场景设计同时考虑建成之后由谁参与、如何组织活动，以及怎样与农业生产保持联系。'},
+            {type:'text',text:'围绕稻虾主题，食农课程、田间观察、亲子烹饪与共享餐食可以形成相互衔接的活动。课程与体验内容随生产节奏调整，使不同时间的到访都能对应真实的田间变化。'},
+            {type:'text',text:'在参与方式上，方案希望把农户的生产经验、社区的组织能力与运营团队的服务结合起来，让当地居民参与食材供应、经验讲述和活动协作。'},
+            {type:'text',text:'展板进一步提出“622”收益分配设想，将运营收益分别用于运营发展、社区公共事务与农户共享，尝试让空间使用与多方参与之间形成持续的联系。这一机制属于方案阶段的运营构想。'}
+          ]},
+          {title:'完整方案',label:'07 / COMPETITION BOARDS',blocks:[
+            {type:'text',text:'三张展板分别从产业培育、乡村运营和多主体参与展开，结合三个空间节点，呈现稻虾生产、食农体验与乡村公共生活之间的关系。'},
+            {type:'subheading',text:'展板 01｜食农教室 · 产业培育'},
+            {type:'text',text:'场地与产业关系、食农教学场景、空间构成及网纱遮阳装置。'},
+            {type:'image',src:'new/rice-board-01-thumb.webp',zoomSrc:'new/rice-board-01.png',fit:'contain',alt:'稻香虾跃处完整方案展板01：食农教室与产业培育',caption:'完整方案展板 01｜食农教室 · 产业培育。'},
+            {type:'subheading',text:'展板 02｜合家欢 · 乡村运营'},
+            {type:'text',text:'整体节点关系、共享厨房、亲子活动、功能流程与运营设想。'},
+            {type:'image',src:'new/rice-board-02-thumb.webp',zoomSrc:'new/rice-board-02.png',fit:'contain',alt:'稻香虾跃处完整方案展板02：合家欢与乡村运营',caption:'完整方案展板 02｜合家欢 · 乡村运营。'},
+            {type:'subheading',text:'展板 03｜观景台 · 多主体参与'},
+            {type:'text',text:'亲地俭朴的设计方法、参与方式、观景平台与构件组织。'},
+            {type:'image',src:'new/rice-board-03-thumb.webp',zoomSrc:'new/rice-board-03.png',fit:'contain',alt:'稻香虾跃处完整方案展板03：观景台与多主体参与',caption:'完整方案展板 03｜观景台 · 多主体参与。'},
+            {type:'text',text:'竞赛概念方案 · 稻虾主题的食农教育与乡村体验场景设计'}
+          ]}
+        ]
+      },
+      game: {
+        id:'game', title:'浮岚——雾与镜', en:'FOG & MIRROR', category:'游戏策划', type:'开放世界区域 / 探索与解谜', cover:'game-isometric.webp', images:['game-isometric.webp','game-map.webp','game-route.webp','game-flow.webp'],
+        summary:'浮岚是一片被长久迷雾笼罩的盆地。玩家通过转动雕像与镜子，引导能够驱散迷雾的“天光”，逐步打开通往聚落、研究院与古代遗迹的道路，并在探索中寻找这片地区失衡的原因。',
+        conceptTitle:'在迷雾中，用光开辟自己的道路', concept:'浮岚是一片被长久迷雾笼罩的盆地。玩家通过转动雕像与镜子，引导能够驱散迷雾的“天光”，逐步打开通往聚落、研究院与古代遗迹的道路，并在探索中寻找这片地区失衡的原因。',
+        tags:['世界观设定','探索地图','光路解谜'],
+        sections:[
+          {title:'让雾成为探索的规则',label:'01 / WORLD RULE',blocks:[
+            {type:'text',text:'设计从重庆盆地与云雾的地域印象出发，将雾转化为影响行走、视线与空间组织的条件。'},
+            {type:'text',text:'普通的光无法驱散这里的迷雾，只有天光形成的光路能够开辟通道。玩家需要观察光源、雕像、镜子和机关之间的位置关系，通过调整光的方向，让原本被遮蔽的道路逐渐显现。'},
+            {type:'text',text:'我希望玩家在探索中不断经历“看见目标—寻找光路—调整装置—打开路径”的过程。地图上的距离也因此与解谜产生联系：一处看得见的地点，可能需要先改变周围的光路才能抵达。'},
+            {type:'image',src:'game-flow.webp',alt:'光路解谜与探索路径流程',caption:'光路连接解谜与行走，玩家通过调整装置改变能够进入的空间。'}
+          ]},
+          {title:'把一种规则逐步展开',label:'02 / MECHANICS',blocks:[
+            {type:'subheading',text:'旋转与反射'}, {type:'text',text:'基础玩法围绕雕像与镜子的朝向展开。玩家将天光引向目标，驱散沿途迷雾或启动机关，再沿打开的道路继续探索。'},
+            {type:'subheading',text:'带着光离开道路'}, {type:'text',text:'随着剧情推进，玩家获得“循光佩”，可以储存并消耗光能，在一定范围内驱散迷雾。这让玩家能够暂时离开固定的光路，也需要考虑能量与移动范围之间的关系。'},
+            {type:'subheading',text:'同时处理多束光'}, {type:'text',text:'进阶谜题将单束光扩展为多束光。雕像射出的光可以具有不同夹角，玩家需要同时判断雕像与镜子的朝向，使光束抵达不同机关。同一组装置可以承担不同目标：一种光路组合打开宝箱，另一种组合开启通往下一处区域的门。谜题由单一目标逐渐发展为多个装置、多个方向之间的组合关系。'},
+            {type:'image',src:'game-flow.webp',alt:'光路玩法规则示意',caption:'基础规则保持一致，难度通过光束数量、反射关系与机关目标逐步增加。'}
+          ]},
+          {title:'让聚落与地形讲述世界',label:'03 / KEY LOCATIONS',blocks:[
+            {type:'text',text:'迷雾影响着浮岚的生活，也塑造了地区中的建筑与聚落。'},
+            {type:'subheading',text:'云阙关｜进入迷雾的门槛'}, {type:'text',text:'两座山峰形成入口的围合，关口装置由光塔控制。玩家在这里首次通过光路解谜打开屏障，学习进入这片地区所需的基本规则。'},
+            {type:'subheading',text:'栖云庄与悬霄阁｜向高处生长的生活'}, {type:'text',text:'受到迷雾挤压，居民沿山体向高处建造房屋。生活设施围绕广场与水源展开，栈道连接不同高度的居住空间。山顶的悬霄阁是祈祷与供奉的场所，形成聚落的精神中心与视觉标志。'},
+            {type:'subheading',text:'枢光台｜试图解释迷雾的地方'}, {type:'text',text:'研究院以机械、齿轮与陈旧建筑形成鲜明的空间特征，植物又逐渐攀附其上。这里聚集着试图通过研究和改造自然解决迷雾问题的人，也是玩家理解另一种立场的入口。'},
+            {type:'subheading',text:'鉴天泓｜汇聚线索与光的中心'}, {type:'text',text:'嵌入山体的巨大镜面连接高处与湖面，下方隐藏古代遗迹。随着探索推进，分散在地区中的光与线索逐渐指向这里，最终与主线的核心装置产生联系。'},
+            {type:'image',src:'game-isometric.webp',alt:'浮岚区域聚落与地形概念图',caption:'聚落、关口、研究院与遗迹各自承担功能，也通过位置与形态建立辨识度。'}
+          ]},
+          {title:'在明确方向中保留探索的余地',label:'04 / EXPLORATION',blocks:[
+            {type:'text',text:'地图将主要任务、遗迹、居民活动与战斗点分布在盆地的不同高度，通过山间栈道、崖壁路径、洞穴和水系形成连接。'},
+            {type:'text',text:'初入区域时，光路提供较明确的前进方向，帮助玩家建立对规则与地形的理解。获得循光佩之后，可探索范围扩大，玩家开始在主线目标之外接触支路、宝箱与遗迹。'},
+            {type:'text',text:'主线与支线在地图中交错：主要路线保持推进目标，次要路线提供观察、解谜与补充世界信息的机会。地下水域、山崖遗迹与山顶旧灯塔，则让同一种光路机制进入不同的空间条件。'},
+            {type:'image',src:'game-map.webp',alt:'浮岚区域地图与探索点布局',caption:'从受光路引导的进入阶段，逐步过渡到能够自主选择支路的探索阶段。'},
+            {type:'image',src:'game-route.webp',alt:'浮岚主线与支线探索路线',caption:'主线、支路与遗迹在不同高度和地形中交织。'}
+          ]},
+          {title:'让探索逐步改变对两方的理解',label:'05 / STORY FLOW',blocks:[
+            {type:'text',text:'浮岚的过去曾将精密技术与对自然的敬重结合在一起。古代装置“穹仪”依赖两者共同维持，而一次失衡最终带来灾变与浓雾。'},
+            {type:'text',text:'灾难之后，不同群体形成了彼此对立的解释。居民与神论者倾向于将灾难归因于研究者的行为，研究者则继续尝试通过技术解决迷雾。玩家需要进入两方的生活与工作空间，在帮助他们处理具体问题的过程中，逐渐接近被割裂的历史。'},
+            {type:'text',text:'探索流程由此展开：'},
+            {type:'subheading',text:'进入云阙关'}, {type:'text',text:'完成光路教学，打开屏障，沿天光进入浮岚。'},
+            {type:'subheading',text:'抵达栖云庄与悬霄阁'}, {type:'text',text:'接触居民与神论者，处理当地的光路问题，获得循光佩，并通过支线了解迷雾对生活的影响。'},
+            {type:'subheading',text:'前往枢光台'}, {type:'text',text:'接触研究者，学习装置与遗迹之间的关系，开始向地区中的多处遗迹探索。'},
+            {type:'subheading',text:'连接分散的遗迹'}, {type:'text',text:'在不同空间中完成解谜，使各处光芒逐步汇向鉴天泓，打开通往古代装置的入口。'},
+            {type:'subheading',text:'回到鉴天泓'}, {type:'text',text:'通过进一步的探索与两方关系的缓和，推动最后装置的启动，让此前分别理解的技术与信仰，在同一处空间中重新相遇。'}
+          ]},
+          {title:'让玩法与主题在最后相遇',label:'06 / ENDING',blocks:[
+            {type:'text',text:'“破镜重圆”既是古代装置的意象，也是整个故事的方向。'},
+            {type:'text',text:'玩家一路调整镜子，让分散的光重新建立联系；随着遗迹中的信息逐渐完整，也开始理解彼此对立的群体为何形成各自的判断。连接光路的过程，与连接不同认识的过程相互对应。'},
+            {type:'text',text:'结尾设想中，两道具有不同色彩与韵律的光最终交织，共同驱散迷雾。玩家完成的不只是最后一道机关，也见证了两方重新合作的可能。'},
+            {type:'subheading',text:'真正的答案，出现在两者交会的地方。'},
+            {type:'image',src:'game-isometric.webp',alt:'浮岚结局空间概念图',caption:'光路与故事在鉴天泓交会。'}
+          ]},
+          {title:'完整策划',label:'07 / FULL DESIGN DOCUMENT',blocks:[
+            {type:'text',text:'背景故事、区域地图、关键地点、玩法规则与探索流程共同构成《浮岚——雾与镜》的高概念规划。'},
+            {type:'subheading',text:'地图与空间'}, {type:'text',text:'区域总图、关键地点、聚落分布、探索点与战斗点规划。'},
+            {type:'subheading',text:'玩法与流程'}, {type:'text',text:'光路规则、循光佩、多束光机关，以及主线和支线的动线设计。'},
+            {type:'pdf',src:'new/game-plan-16-pages.pdf',title:'浮岚——雾与镜 · 完整策划案 PDF'},
+            {type:'gallery',layout:'stack',items:[
+              {src:'new/game-page-01.jpg',alt:'浮岚策划案第 01 页',caption:'策划案 · 01 / 16'},
+              {src:'new/game-page-02.jpg',alt:'浮岚策划案第 02 页',caption:'策划案 · 02 / 16'},
+              {src:'new/game-page-03.jpg',alt:'浮岚策划案第 03 页',caption:'策划案 · 03 / 16'},
+              {src:'new/game-page-04.jpg',alt:'浮岚策划案第 04 页',caption:'策划案 · 04 / 16'},
+              {src:'new/game-page-05.jpg',alt:'浮岚策划案第 05 页',caption:'策划案 · 05 / 16'},
+              {src:'new/game-page-06.jpg',alt:'浮岚策划案第 06 页',caption:'策划案 · 06 / 16'},
+              {src:'new/game-page-07.jpg',alt:'浮岚策划案第 07 页',caption:'策划案 · 07 / 16'},
+              {src:'new/game-page-08.jpg',alt:'浮岚策划案第 08 页',caption:'策划案 · 08 / 16'},
+              {src:'new/game-page-09.jpg',alt:'浮岚策划案第 09 页',caption:'策划案 · 09 / 16'},
+              {src:'new/game-page-10.jpg',alt:'浮岚策划案第 10 页',caption:'策划案 · 10 / 16'},
+              {src:'new/game-page-11.jpg',alt:'浮岚策划案第 11 页',caption:'策划案 · 11 / 16'},
+              {src:'new/game-page-12.jpg',alt:'浮岚策划案第 12 页',caption:'策划案 · 12 / 16'},
+              {src:'new/game-page-13.jpg',alt:'浮岚策划案第 13 页',caption:'策划案 · 13 / 16'},
+              {src:'new/game-page-14.jpg',alt:'浮岚策划案第 14 页',caption:'策划案 · 14 / 16'},
+              {src:'new/game-page-15.jpg',alt:'浮岚策划案第 15 页',caption:'策划案 · 15 / 16'},
+              {src:'new/game-page-16.jpg',alt:'浮岚策划案第 16 页',caption:'策划案 · 16 / 16'}
+            ]},
+            {type:'text',text:'四川美术学院 · 桑艺珊 · 2025.12 · 游戏高概念规划 / 区域与探索设计'}
+          ]}
+        ]
+      }
+    });
+    const categoryInfo = {
+      environment:{title:'环境设计',en:'ENVIRONMENT DESIGN',intro:'从校园场地、社区空间到乡村农文旅场景，记录不同尺度的空间设计练习。',ids:['tree','eaves','salt']},
+      game:{title:'游戏策划',en:'GAME DESIGN',intro:'从世界设定与地图出发，组织探索路线、交互机制和玩家体验。',ids:['game']},
+      vibe:{title:'Vibe Coding',en:'DIGITAL EXPERIMENTS',intro:'一个持续更新的数字实验分类。',ids:[]}
+    };
+    const app=document.querySelector('#app');
+    let activeProject='tree', cycleTimer=null,restartHubCycle=null;
+    const esc=(s)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    function go(hash,animate=false){const change=()=>{history.pushState({},'',hash);render();window.scrollTo({top:0,behavior:'auto'})};if(animate&&document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.startViewTransition(change)}else{change();if(animate){app.classList.remove('route-enter');void app.offsetWidth;app.classList.add('route-enter');setTimeout(()=>app.classList.remove('route-enter'),650)}}}
+    function currentRoute(){const h=location.hash.replace(/^#/, '');if(!h||h==='home'||h==='intro')return {type:'home',stage:'intro'};if(h==='work')return {type:'home',stage:'work'};const [type,id]=h.split('/');return {type,id};}
+    function nav(){
+      document.querySelectorAll('[data-nav-category]').forEach(b=>b.onclick=()=>go('#category/'+b.dataset.navCategory));
+      document.querySelector('[data-nav-about]').onclick=()=>go('#about');
+      document.querySelector('.brand').onclick=e=>{e.preventDefault();go('#intro')};
+    }
+    function projectCard(p,i){return `<a class="work-card fade-in" href="#project/${p.id}" data-open-project="${p.id}" style="animation-delay:${i*80}ms"><img src="${A+p.cover}" alt="${esc(p.title)} 项目效果图" loading="lazy"><span class="card-arrow">↗</span><div class="work-card-copy"><span class="eyebrow">${esc(p.category)}　/　${esc(p.type)}</span><h2>${esc(p.title)}</h2><p>${esc(p.tags.slice(0,2).join(' · '))}</p></div></a>`;}
+    function renderHome(stage='intro'){
+      if(stage!=='work'){
+        app.innerHTML=`<section class="cover is-intro-stage" id="cover"><div class="cover-title">SIN3</div><div class="cover-sub">SANG YISHAN　/　PORTFOLIO</div><a class="scrollcue" href="#work"><span>SCROLL TO EXPLORE</span><i></i></a></section>`;
+        let touchStart=0,locked=false;
+        const enter=()=>{if(locked)return;locked=true;go('#work',true)};
+        const cover=document.querySelector('#cover');
+        cover.addEventListener('wheel',e=>{if(e.deltaY>24){e.preventDefault();enter()}},{passive:false});
+        cover.addEventListener('touchstart',e=>{touchStart=e.touches[0].clientY},{passive:true});
+        cover.addEventListener('touchend',e=>{if(touchStart-e.changedTouches[0].clientY>48)enter()},{passive:true});
+        document.querySelector('.scrollcue').onclick=e=>{e.preventDefault();enter()};
+        nav();return;
+      }
+      const all=Object.values(projects);const initial=projects[activeProject]||projects.tree;
+      app.innerHTML=`<section class="hub stage-reveal" id="work-hub" aria-label="作品入口">
+        <div class="hub-media"><img id="hub-image-a" class="is-active" src="${A+initial.cover}" alt="${esc(initial.title)} 项目预览"><img id="hub-image-b" src="${A+initial.cover}" alt="" aria-hidden="true"></div><div class="hub-shade"></div>
+        <div class="hub-topline"><span>SELECTED WORKS　/　INDEX</span></div>
+        <div class="hub-center"><h1>SIN3</h1><p>ENVIRONMENT　/　GAME　/　DIGITAL</p></div>
+        <div class="project-orbit">${all.map(p=>`<a class="orbit-link ${p.id===activeProject?'active':''}" data-project="${p.id}" href="#project/${p.id}">${esc(p.title)}</a>`).join('')}</div>
+        <div class="hub-current"><div class="eyebrow" id="hub-current-category">${esc(initial.category)} / SELECTED</div><h2 id="hub-current-title">${esc(initial.title)}</h2><p id="hub-current-type">${esc(initial.type)}</p></div>
+        <button class="view-project" id="hub-view" type="button">查看项目　↗</button><a class="hub-back-intro" href="#intro">← INTRO</a><div class="hub-scroll">SCROLL TO BROWSE</div>
+      </section><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>ENVIRONMENT DESIGN · GAME PLANNING · VIBE CODING</span></footer>`;
+      const a=document.querySelector('#hub-image-a'),b=document.querySelector('#hub-image-b');let front=a,requestId=0,cycleIndex=0,touchPreviewId=null;const revealImage=a;revealImage.addEventListener('animationend',()=>document.querySelector('#work-hub')?.classList.remove('stage-reveal'),{once:true});
+      function showImage(src,alt){
+        const id=++requestId,back=front===a?b:a;let finished=false;
+        const finish=()=>{if(finished||id!==requestId||!back.complete||!back.naturalWidth)return;finished=true;back.onload=null;back.onerror=null;back.alt=alt;back.classList.add('is-active');front.classList.remove('is-active');front=back};
+        back.onload=finish;back.onerror=()=>{if(id===requestId){back.onload=null;back.onerror=null}};back.alt=alt;back.src=A+src;
+        if(back.complete&&back.naturalWidth)queueMicrotask(finish);
+      }
+      function stopCycle(){clearInterval(cycleTimer);cycleTimer=null}
+      function startCycle(){stopCycle();const p=projects[activeProject];if(!p||document.hidden)return;cycleTimer=setInterval(()=>{cycleIndex=(cycleIndex+1)%p.images.length;showImage(p.images[cycleIndex],p.title+' 项目轮换图')},3000)}restartHubCycle=startCycle;
+      function choose(id){const p=projects[id];if(!p||id===activeProject)return;activeProject=id;cycleIndex=Math.max(0,p.images.indexOf(p.cover));document.querySelectorAll('.orbit-link').forEach(x=>x.classList.toggle('active',x.dataset.project===id));document.querySelector('#hub-current-category').textContent=p.category+' / SELECTED';document.querySelector('#hub-current-title').textContent=p.title;document.querySelector('#hub-current-type').textContent=p.type;document.querySelector('#hub-view').textContent='查看项目　↗';showImage(p.cover,p.title+' 项目预览');startCycle()}
+      document.querySelectorAll('.orbit-link').forEach(link=>{
+        link.addEventListener('pointerenter',()=>{if(matchMedia('(hover:hover)').matches)choose(link.dataset.project)});
+        link.addEventListener('focus',()=>choose(link.dataset.project));
+        link.addEventListener('click',e=>{e.preventDefault();if(matchMedia('(hover:none)').matches&&touchPreviewId!==link.dataset.project){choose(link.dataset.project);touchPreviewId=link.dataset.project;document.querySelector('#hub-view').textContent='查看 '+projects[link.dataset.project].title+'　↗';return}choose(link.dataset.project);go('#project/'+link.dataset.project)});
+      });
+      document.querySelector('#hub-view').onclick=()=>go('#project/'+activeProject);
+      document.querySelector('.hub-back-intro').onclick=e=>{e.preventDefault();go('#intro',true)};
+      startCycle();nav();
+    }
+    function renderCategory(id){const c=categoryInfo[id]||categoryInfo.environment;const list=c.ids.map(x=>projects[x]);app.innerHTML=`<section class="page-light"><div class="page-head"><div><div class="eyebrow">${esc(c.en)}　/　${String(Object.keys(categoryInfo).indexOf(id)+1).padStart(2,'0')}</div><h1>${esc(c.title)}</h1></div><p>${esc(c.intro)}</p></div>${list.length?`<div class="project-grid">${list.map(projectCard).join('')}</div>`:`<div class="empty-state"><span class="num">01 / OPEN SPACE</span><div><h2>作品正在整理中</h2><p>这个分类已经为后续的数字实验留好位置。新作品完成后会出现在这里。</p></div></div>`}<div style="margin-top:42px"><button class="project-nav-back" style="border:0;background:none;color:#55545a;padding:0;cursor:pointer" onclick="history.back()">← 返回上一页</button></div></section><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>${esc(c.en)}</span></footer>`;app.querySelectorAll('[data-open-project]').forEach(a=>a.onclick=e=>{e.preventDefault();go('#project/'+a.dataset.openProject)});nav();}
+    function storyBlockMarkup(block){
+      if(block.type==='text')return `<p>${esc(block.text)}</p>`;
+      if(block.type==='subheading')return `<h4 class="story-subheading">${esc(block.text)}</h4>`;
+      const figure=item=>`<figure class="story-block-figure ${item.fit==='contain'?'is-contain':''}"><img class="story-image" src="${A+item.src}" alt="${esc(item.alt||item.caption||'项目图片')}" data-zoom="${A+(item.zoomSrc||item.src)}" data-caption="${esc(item.caption||item.alt||'')}" loading="lazy">${item.caption?`<figcaption>${esc(item.caption)}</figcaption>`:''}</figure>`;
+      if(block.type==='image')return figure(block);
+      if(block.type==='gallery')return `<div class="story-block-gallery ${esc(block.layout||'two')}">${block.items.map(figure).join('')}</div>`;
+      if(block.type==='boards')return `<div class="story-board-stack">${block.items.map((src,j)=>`<img src="${A+src}" alt="项目展板 ${j+1}" data-zoom="${A+src}" data-caption="展板 ${j+1}" loading="lazy">`).join('')}</div>`;
+      if(block.type==='pdf')return `<div class="story-pdf"><div class="story-pdf-head"><strong>${esc(block.title||'完整策划案 PDF')}</strong><a href="${A+block.src}" target="_blank" rel="noopener">在新窗口查看 PDF ↗</a></div><iframe src="${A+block.src}#view=FitH" title="${esc(block.title||'项目 PDF')}" loading="lazy"></iframe></div>`;
+      return '';
+    }
+    function storyMarkup(p,s,i){
+      let media='';
+      if(s.blocks)media=s.blocks.map(storyBlockMarkup).join('');
+      else{
+        if(s.image)media=`<img class="story-image ${s.contain?'contain':''}" src="${A+s.image}" alt="${esc(s.caption||s.title)}" data-zoom="${A+s.image}" data-caption="${esc(s.caption||s.title)}" loading="lazy">`;
+        if(s.pair)media=`<div class="image-pair">${s.pair.map(src=>`<img class="story-image" src="${A+src}" alt="${esc(s.caption||s.title)}" data-zoom="${A+src}" data-caption="${esc(s.caption||s.title)}" loading="lazy">`).join('')}</div>`;
+        if(s.video)media=`<video class="detail-video" controls preload="none" playsinline poster="${A+s.poster}"><source src="${A+s.video}" type="video/mp4">当前浏览器暂不支持播放此视频。</video>`;
+        if(s.boards)media=`<div class="board-stack">${s.boards.map((src,j)=>`<img src="${A+src}" alt="${esc(p.title)} 展板 ${j+1}" data-zoom="${A+src}" data-caption="${esc(s.caption||s.title)}" loading="lazy">`).join('')}</div>`;
+      }
+      return `<section class="story-section"><div class="story-label"><div class="eyebrow">${esc(s.label||String(i+1).padStart(2,'0'))}</div><h3>${esc(s.title)}</h3></div><div class="story-copy">${s.blocks?'':`<p>${esc(s.text)}</p>`}${media}${!s.blocks&&s.caption?`<div class="image-caption">${esc(s.caption)}</div>`:''}</div></section>`;
+    }
+    function renderProject(id){const p=projects[id]||projects.tree;activeProject=p.id;const roles=p.roles?`<div class="meta-item"><span>个人贡献</span><strong>${esc(p.roles)}</strong></div>`:'';const facts=`<div class="detail-meta"><div class="meta-item"><span>分类</span><strong>${esc(p.category)}</strong></div><div class="meta-item"><span>项目类型</span><strong>${esc(p.type)}</strong></div>${p.location?`<div class="meta-item"><span>场地</span><strong>${esc(p.location)}</strong></div>`:''}<div class="meta-item"><span>关键词</span><strong>${esc(p.tags.join(' · '))}</strong></div>${roles}</div>`;const sections=p.sections.map((s,i)=>storyMarkup(p,s,i)).join('');const ids=Object.keys(projects);const idx=ids.indexOf(p.id);const prev=projects[ids[(idx-1+ids.length)%ids.length]],next=projects[ids[(idx+1)%ids.length]];
+      app.innerHTML=`<article class="detail"><header class="detail-hero"><img src="${A+p.cover}" alt="${esc(p.detailTitle||p.title)} 主视觉"><div class="detail-hero-copy"><div class="eyebrow">${esc(p.category)}　/　${esc(p.type)}</div><h1 class="${p.detailTitle?'is-long-title':''}">${esc(p.detailTitle||p.title)}</h1><p>${esc(p.summary)}</p></div></header><section class="detail-overview">${facts}${p.conceptTitle?`<div class="overview-copy"><div class="eyebrow">DESIGN CONCEPT</div><h2>${esc(p.conceptTitle)}</h2><p>${esc(p.concept||p.summary)}</p></div>`:`<div class="overview-copy"><div class="eyebrow">PROJECT OVERVIEW</div><h2>快速阅览</h2><p>${esc(p.overview||p.summary)}</p></div>`}</section>${sections}<nav class="project-nav" aria-label="项目切换"><button onclick="go('#project/${prev.id}')"><span>PREVIOUS PROJECT</span><strong>${esc(prev.title)}　←</strong></button><button onclick="go('#project/${next.id}')"><span>NEXT PROJECT</span><strong>→　${esc(next.title)}</strong></button></nav><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>${esc(p.category)}</span></footer></article><button class="back-home" onclick="go('#category/${p.id==='game'?'game':'environment'}')">← 返回${p.id==='game'?'游戏策划':'环境设计'}</button>`;
+      app.querySelectorAll('[data-zoom]').forEach(img=>img.addEventListener('click',()=>openLightbox(img.dataset.zoom,img.dataset.caption||img.alt)));nav();
+    }
+    const aboutStories=[
+      {title:'小鸡合作社',category:'日常记录',image:'about-coop-chick.jpg',alt:'在阳光下抱着一只小鸡'},
+      {title:'合作社售卖',category:'产品实践',image:'about-coop-market.jpg',alt:'小鸡合作社的产品与售卖现场'},
+      {title:'滑雪',category:'个人爱好',image:'about-ski.jpg',alt:'滑雪时佩戴头盔的留影'},
+      {title:'个人简介',category:'PROFILE',image:'about-blank.svg',alt:''},
+      {title:'活动记录',category:'CO-OP / FIELD NOTES',image:'about-blank.svg',alt:''},
+      {title:'游戏记录',category:'GAME DESIGN',image:'game-isometric.webp',alt:'游戏策划中的等距世界地图草图'}
+    ];
+    function aboutPhoto(story){return `<div class="about-photo"><img src="${A+story.image}" alt="${esc(story.alt)}" draggable="false"${story.position?` style="object-position:${story.position}"`:''}></div>`}
+    function aboutCard(story,i){return `<article class="about-story-card" data-about-card="${i}">${aboutPhoto(story)}<div class="about-card-info"><strong>${esc(story.title)}</strong><span>${esc(story.category)}</span></div></article>`}
+    let aboutCardBases=[],aboutMeasuredWidth=0,aboutMeasuredHeight=0;
+    function measureAboutCards(){
+      const cards=[...document.querySelectorAll('#about-journey .about-story-card')];
+      cards.forEach(card=>{card.style.transform='none'});
+      aboutCardBases=cards.map(card=>{const r=card.getBoundingClientRect();return{left:r.left+window.scrollX,top:r.top+window.scrollY,width:r.width,height:r.height}});
+      aboutMeasuredWidth=window.innerWidth;aboutMeasuredHeight=window.innerHeight;
+    }
+    function renderAbout(){
+      const intro='以空间与环境设计为主要创作方向，也在探索游戏策划与数字创作。从课程中的空间方案，到项目中的尝试与落地，再到合作社里的劳动与售卖，我在不同的实践中积累经验，尝试把想法变成具体的作品。';
+      const initial=`<section class="about-page"><div class="about-journey" id="about-journey"><section class="about-intro-stage"><div class="about-intro"><p class="about-lead">${intro}</p></div><div class="about-scroll-hint">SCROLL TO BROWSE</div></section><section class="about-content-stage"><div class="about-identity" aria-label="桑艺珊的专业方向"><div class="eyebrow">ABOUT / SIN3</div><h1>桑艺珊</h1><div class="about-categories"><span>环境设计</span><span>游戏策划</span><span>Vibe Coding</span></div></div><section class="about-grid" aria-label="个人照片与经历"><div class="about-grid-items" data-scatter-settled="false">${aboutStories.map(aboutCard).join('')}</div></section></section></div><footer class="about-footer"><span>SIN3　/　SANG YISHAN</span><span>ABOUT</span></footer></section>`;
+      app.innerHTML=initial;measureAboutCards();updateAboutFlow();
+    }
+    const aboutStarts=[
+      {x:-2,y:13,w:17,h:24,r:-11},{x:85,y:12,w:17,h:24,r:10},
+      {x:-2,y:70,w:17,h:24,r:-8},{x:85,y:69,w:17,h:24,r:8},
+      {x:23,y:-5,w:17,h:24,r:-5},{x:62,y:83,w:17,h:24,r:7}
+    ];
+    const aboutMobileStarts=[
+      {x:-4,y:9,w:27,h:20,r:-9},{x:77,y:8,w:27,h:20,r:8},
+      {x:-4,y:72,w:27,h:20,r:-7},{x:77,y:71,w:27,h:20,r:7},
+      {x:22,y:-5,w:27,h:20,r:-4},{x:57,y:83,w:27,h:20,r:6}
+    ];
+    const aboutClamp=v=>Math.max(0,Math.min(1,v));
+    const aboutSmooth=v=>{v=aboutClamp(v);return v*v*(3-2*v)};
+    function updateAboutFlow(){
+      const section=document.querySelector('#about-journey');if(!section)return;
+      const intro=section.querySelector('.about-intro'),identity=section.querySelector('.about-identity'),gridItems=section.querySelector('.about-grid-items'),cards=[...section.querySelectorAll('.about-story-card')];
+      if(cards.length!==aboutCardBases.length||aboutMeasuredWidth!==window.innerWidth||aboutMeasuredHeight!==window.innerHeight)measureAboutCards();
+      const sectionTop=section.getBoundingClientRect().top+window.scrollY,progress=aboutClamp((window.scrollY-sectionTop)/Math.max(1,window.innerHeight)),settle=aboutSmooth(progress);
+      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduced){intro.style.opacity='1';intro.style.transform='none';identity.style.opacity='1';identity.style.transform='none';gridItems.dataset.scatterSettled='true';cards.forEach(card=>{card.style.transform='none';card.querySelector('.about-photo').style.cssText='';card.querySelector('.about-card-info').style.opacity='1'});return}
+      const introFade=aboutSmooth(progress/.78);intro.style.opacity=String(1-introFade);intro.style.transform=`translateY(${-22*introFade}px)`;
+      const identityIn=aboutSmooth((progress-.12)/.83);identity.style.opacity=String(identityIn);identity.style.transform=`translateY(${(1-identityIn)*16}px)`;
+      const isMobile=window.innerWidth<=760,starts=isMobile?aboutMobileStarts:aboutStarts,scrollTop=window.scrollY;
+      gridItems.dataset.scatterSettled=String(progress>=.96);
+      cards.forEach((card,i)=>{
+        const base=aboutCardBases[i],start=starts[i]||starts[starts.length-1];if(!base)return;
+        const baseCenterX=base.left+base.width/2,baseCenterY=base.top-scrollTop+base.height/2;
+        const startWidth=start.w/100*window.innerWidth,startHeight=start.h/100*window.innerHeight,startCenterX=start.x/100*window.innerWidth+startWidth/2,startCenterY=start.y/100*window.innerHeight+startHeight/2;
+        const centerX=startCenterX+(baseCenterX-startCenterX)*settle,centerY=startCenterY+(baseCenterY-startCenterY)*settle;
+        const startScale=Math.min(startWidth/base.width,startHeight/base.height),scale=startScale+(1-startScale)*settle;
+        const dx=centerX-baseCenterX,dy=centerY-baseCenterY,rotation=start.r*(1-settle);
+        card.style.transform=`translate3d(${dx}px,${dy}px,0) rotate(${rotation}deg) scale(${scale})`;
+        const photo=card.querySelector('.about-photo');photo.style.left=(14*settle)+'%';photo.style.top=(6*settle)+'%';photo.style.width=(100-28*settle)+'%';photo.style.height=(100-23*settle)+'%';photo.style.borderRadius=(13-3*settle)+'px';
+        card.querySelector('.about-card-info').style.opacity=String(aboutSmooth((progress-.68)/.25));
+      });
+      const hint=section.querySelector('.about-scroll-hint');if(hint)hint.style.opacity=String(1-aboutSmooth(progress/.72));
+    }
+
+    function render(){clearInterval(cycleTimer);cycleTimer=null;const r=currentRoute();if(r.type==='category')renderCategory(r.id);else if(r.type==='project')renderProject(r.id);else if(r.type==='about')renderAbout();else renderHome(r.stage);}
+    function openLightbox(src,caption){const d=document.querySelector('#lightbox');d.querySelector('img').src=src;d.querySelector('img').alt=caption;d.querySelector('.lightbox-caption').textContent=caption;d.showModal()}
+    document.querySelector('#lightbox .lightbox-close').onclick=()=>document.querySelector('#lightbox').close();document.querySelector('#lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInterval(cycleTimer);cycleTimer=null}else if(currentRoute().type==='home'&&currentRoute().stage==='work'&&restartHubCycle)restartHubCycle()});window.addEventListener('popstate',()=>{render();window.scrollTo(0,0)});window.addEventListener('scroll',()=>{if(!window.__aboutRaf){window.__aboutRaf=requestAnimationFrame(()=>{window.__aboutRaf=0;updateAboutFlow()})}},{passive:true});window.addEventListener('resize',()=>requestAnimationFrame(()=>{measureAboutCards();updateAboutFlow()}));render();
+  </script>
+</body>
+</html>
