@@ -1,0 +1,572 @@
+{
+  "renderDpi": 180,
+  "pageRatio": 1.7777777777777777,
+  "albums": {
+    "interior": {
+      "title": "室内设计",
+      "description": "空间与行为、规范与尺度、材料与工艺三份住宅课设合并去重，并附完整原始展板。",
+      "cover": "./assets/new/coursework/interior-cover.png",
+      "pageCount": 27,
+      "namespace": "sin3-coursework-interior",
+      "pageLabel": "室内设计",
+      "pages": [
+        {
+          "page": 1,
+          "src": "./assets/new/coursework/interior-01.webp",
+          "label": "材料与工艺｜原始住宅空间封面",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 2,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 2,
+          "src": "./assets/new/coursework/interior-02.webp",
+          "label": "空间与行为｜平面行为分析",
+          "source": "结课作业 空间与行为.pptx",
+          "sourcePage": 3,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 3,
+          "src": "./assets/new/coursework/interior-03.webp",
+          "label": "空间与行为｜居住者人物画像",
+          "source": "结课作业 空间与行为.pptx",
+          "sourcePage": 5,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 4,
+          "src": "./assets/new/coursework/interior-04.webp",
+          "label": "空间与行为｜设计师人物画像",
+          "source": "结课作业 空间与行为.pptx",
+          "sourcePage": 6,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 5,
+          "src": "./assets/new/coursework/interior-05.webp",
+          "label": "空间与行为｜方案平面调整一",
+          "source": "结课作业 空间与行为.pptx",
+          "sourcePage": 8,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 6,
+          "src": "./assets/new/coursework/interior-06.webp",
+          "label": "空间与行为｜方案平面调整二",
+          "source": "结课作业 空间与行为.pptx",
+          "sourcePage": 9,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 7,
+          "src": "./assets/new/coursework/interior-07.webp",
+          "label": "空间与行为｜空间流线图",
+          "source": "结课作业 空间与行为.pptx",
+          "sourcePage": 25,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 8,
+          "src": "./assets/new/coursework/interior-08.webp",
+          "label": "规范与尺度｜尺寸平面图",
+          "source": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+          "sourcePage": 4,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 9,
+          "src": "./assets/new/coursework/interior-09.webp",
+          "label": "规范与尺度｜尺寸平面细化",
+          "source": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+          "sourcePage": 5,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 10,
+          "src": "./assets/new/coursework/interior-10.webp",
+          "label": "规范与尺度｜地面铺装尺寸图",
+          "source": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+          "sourcePage": 6,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 11,
+          "src": "./assets/new/coursework/interior-11.webp",
+          "label": "材料与工艺｜地面材料铺装图",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 6,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 12,
+          "src": "./assets/new/coursework/interior-12.webp",
+          "label": "材料与工艺｜立面展开一",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 7,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 13,
+          "src": "./assets/new/coursework/interior-13.webp",
+          "label": "规范与尺度｜立面尺寸图一",
+          "source": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+          "sourcePage": 8,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 14,
+          "src": "./assets/new/coursework/interior-14.webp",
+          "label": "材料与工艺｜立面展开二",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 8,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 15,
+          "src": "./assets/new/coursework/interior-15.webp",
+          "label": "规范与尺度｜立面尺寸图二",
+          "source": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+          "sourcePage": 9,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 16,
+          "src": "./assets/new/coursework/interior-16.webp",
+          "label": "材料与工艺｜立面展开三",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 9,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 17,
+          "src": "./assets/new/coursework/interior-17.webp",
+          "label": "规范与尺度｜立面尺寸图三",
+          "source": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+          "sourcePage": 10,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 18,
+          "src": "./assets/new/coursework/interior-18.webp",
+          "label": "材料与工艺｜立面展开四",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 10,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 19,
+          "src": "./assets/new/coursework/interior-19.webp",
+          "label": "规范与尺度｜立面尺寸图四",
+          "source": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+          "sourcePage": 11,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 20,
+          "src": "./assets/new/coursework/interior-20.webp",
+          "label": "材料与工艺｜材料样板",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 12,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 21,
+          "src": "./assets/new/coursework/interior-21.webp",
+          "label": "材料与工艺｜客厅效果图一",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 13,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 22,
+          "src": "./assets/new/coursework/interior-22.webp",
+          "label": "材料与工艺｜餐厨效果图",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 14,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 23,
+          "src": "./assets/new/coursework/interior-23.webp",
+          "label": "材料与工艺｜客厅效果图二",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 15,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 24,
+          "src": "./assets/new/coursework/interior-24.webp",
+          "label": "材料与工艺｜卧室效果图一",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 16,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 25,
+          "src": "./assets/new/coursework/interior-25.webp",
+          "label": "材料与工艺｜卧室效果图二",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 17,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 26,
+          "src": "./assets/new/coursework/interior-26.webp",
+          "label": "材料与工艺｜卫生间效果图",
+          "source": "2024210610 桑艺珊 材料与工艺.pptx",
+          "sourcePage": 18,
+          "renderedSize": [
+            2401,
+            1350
+          ]
+        },
+        {
+          "page": 27,
+          "src": "./assets/new/coursework/interior-presentation-board.jpg",
+          "label": "室内设计｜完整竖版展板",
+          "source": "1771f66de70eba22ce2f7730fbbbc8d9.JPG",
+          "sourcePage": null,
+          "renderedSize": [
+            2551,
+            4252
+          ],
+          "uncropped": true
+        }
+      ]
+    },
+    "architecture": {
+      "title": "建筑初步",
+      "description": "建筑初步课程结课作业原作第 1–19 页。",
+      "cover": "./assets/new/coursework/architecture-cover.jpg",
+      "pageCount": 19,
+      "namespace": "sin3-coursework-architecture",
+      "pageLabel": "建筑初步",
+      "pages": [
+        {
+          "page": 1,
+          "src": "./assets/new/coursework/architecture-01.webp",
+          "label": "建筑初步｜原作第 1 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 1,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 2,
+          "src": "./assets/new/coursework/architecture-02.webp",
+          "label": "建筑初步｜原作第 2 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 2,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 3,
+          "src": "./assets/new/coursework/architecture-03.webp",
+          "label": "建筑初步｜原作第 3 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 3,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 4,
+          "src": "./assets/new/coursework/architecture-04.webp",
+          "label": "建筑初步｜原作第 4 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 4,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 5,
+          "src": "./assets/new/coursework/architecture-05.webp",
+          "label": "建筑初步｜原作第 5 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 5,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 6,
+          "src": "./assets/new/coursework/architecture-06.webp",
+          "label": "建筑初步｜原作第 6 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 6,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 7,
+          "src": "./assets/new/coursework/architecture-07.webp",
+          "label": "建筑初步｜原作第 7 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 7,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 8,
+          "src": "./assets/new/coursework/architecture-08.webp",
+          "label": "建筑初步｜原作第 8 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 8,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 9,
+          "src": "./assets/new/coursework/architecture-09.webp",
+          "label": "建筑初步｜原作第 9 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 9,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 10,
+          "src": "./assets/new/coursework/architecture-10.webp",
+          "label": "建筑初步｜原作第 10 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 10,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 11,
+          "src": "./assets/new/coursework/architecture-11.webp",
+          "label": "建筑初步｜原作第 11 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 11,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 12,
+          "src": "./assets/new/coursework/architecture-12.webp",
+          "label": "建筑初步｜原作第 12 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 12,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 13,
+          "src": "./assets/new/coursework/architecture-13.webp",
+          "label": "建筑初步｜原作第 13 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 13,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 14,
+          "src": "./assets/new/coursework/architecture-14.webp",
+          "label": "建筑初步｜原作第 14 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 14,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 15,
+          "src": "./assets/new/coursework/architecture-15.webp",
+          "label": "建筑初步｜原作第 15 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 15,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 16,
+          "src": "./assets/new/coursework/architecture-16.webp",
+          "label": "建筑初步｜原作第 16 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 16,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 17,
+          "src": "./assets/new/coursework/architecture-17.webp",
+          "label": "建筑初步｜原作第 17 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 17,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 18,
+          "src": "./assets/new/coursework/architecture-18.webp",
+          "label": "建筑初步｜原作第 18 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 18,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        },
+        {
+          "page": 19,
+          "src": "./assets/new/coursework/architecture-19.webp",
+          "label": "建筑初步｜原作第 19 页",
+          "source": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+          "sourcePage": 19,
+          "renderedSize": [
+            2400,
+            1350
+          ]
+        }
+      ]
+    }
+  },
+  "sources": {
+    "interiorDecks": [
+      {
+        "file": "2024210610 桑艺珊 材料与工艺.pptx",
+        "allowedPages": "1–18"
+      },
+      {
+        "file": "2024210610 桑艺珊 规范与尺度结课作业.pptx",
+        "allowedPages": "1–17"
+      },
+      {
+        "file": "结课作业 空间与行为.pptx",
+        "allowedPages": "1–25",
+        "hardStopAfterPage": 25
+      },
+      {
+        "file": "/Users/quiqi/Downloads/1771f66de70eba22ce2f7730fbbbc8d9.JPG",
+        "allowedPages": "full original image",
+        "pixels": [
+          2551,
+          4252
+        ]
+      }
+    ],
+    "architectureDeck": {
+      "file": "结课作业 桑艺珊 2024210610 建筑初步.pdf",
+      "allowedPages": "1–19",
+      "hardStopAfterPage": 19
+    }
+  },
+  "deduplication": [
+    "三份室内住宅作业共享相同的暖木客厅封面，只保留材料与工艺第 2 页的原始图。",
+    "材料与工艺第 4 页、规范与尺度第 4 页、空间与行为第 18 页共享平面底图；保留规范与尺度第 4 页的尺寸版本。",
+    "材料与工艺第 5 页、规范与尺度第 5 页、空间与行为第 19 页为重复平面；保留规范与尺度第 5 页。",
+    "规范与尺度第 6 页与空间与行为第 20 页重复；保留规范与尺度第 6 页。材料与工艺第 6 页是独立材料铺装方案，保留。",
+    "空间与行为第 11–17 页及规范与尺度第 12–17 页与材料与工艺第 12–18 页的材料板/效果图重复；各重复画面只保留材料与工艺版本。",
+    "空间与行为第 21–24 页为无尺寸或材料标注的重复立面图；保留材料与工艺第 7–10 页和规范与尺度第 8–11 页的互补版本，以保留材料标注与尺寸信息。",
+    "空间与行为第 3、5、6、8、9、25 页含独立行为分析、人物画像、平面调整和流线信息，保留。"
+  ]
+}

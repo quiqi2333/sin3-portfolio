@@ -11,6 +11,10 @@
     :root{color-scheme:dark;--ink:#09090b;--paper:#f0efeb;--muted:#9b9aa0;--line:rgba(255,255,255,.16);--acid:#d7ff73;--violet:#9189ff;--serif:"Songti SC","Noto Serif SC","SimSun",Georgia,serif;--sans:"Arial","Microsoft YaHei",sans-serif;--mono:"Courier New",monospace}
     *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--ink)}body{margin:0;background:var(--ink);color:#f6f5f2;font-family:var(--sans);font-size:16px;-webkit-font-smoothing:antialiased}button,a{font:inherit}a{color:inherit;text-decoration:none}button{color:inherit}img{display:block;max-width:100%}::selection{background:var(--acid);color:#111}
     .topbar{position:fixed;z-index:40;inset:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,4.5vw,72px);mix-blend-mode:difference;color:white;pointer-events:none}.topbar>*{pointer-events:auto}.brand{font-size:19px;font-weight:700;letter-spacing:.12em}.brand small{font:10px var(--mono);letter-spacing:.18em;opacity:.6;margin-left:8px}.toplinks{display:flex;gap:clamp(16px,3vw,42px);align-items:center}.toplinks button,.toplinks a{background:none;border:0;padding:0;color:inherit;cursor:pointer;font-size:12px;letter-spacing:.09em;text-transform:uppercase;opacity:.82}.toplinks button:hover,.toplinks a:hover{opacity:1;color:var(--acid)}
+    .topbar{transition:background-color .22s ease,border-color .22s ease,backdrop-filter .22s ease,color .22s ease}
+    body.nav-glass-light .topbar{mix-blend-mode:normal;color:#29282b;background:rgba(244,242,237,.72);backdrop-filter:blur(11px);border-bottom:1px solid #17171712}
+    body.nav-glass-dark .topbar{mix-blend-mode:normal;color:#f4f3f0;background:rgba(10,10,12,.66);backdrop-filter:blur(11px);border-bottom:1px solid #ffffff12}
+    body.about-mode.nav-glass-dark .topbar{background:rgba(10,10,12,.66)}
     #app{min-height:100vh}.cover{height:100svh;min-height:600px;position:relative;display:grid;place-items:center;overflow:hidden;background:#08080a;isolation:isolate}.cover::before{content:"";position:absolute;width:min(70vw,760px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 49% 49%,rgba(86,81,141,.12),transparent 57%);filter:blur(28px)}.cover-title{view-transition-name:sin3-title;position:relative;font-size:clamp(74px,18vw,240px);font-weight:500;letter-spacing:-.095em;line-height:.8;margin-right:.09em}.cover-sub{position:absolute;left:clamp(22px,5vw,76px);bottom:clamp(28px,5vh,58px);font:11px var(--mono);letter-spacing:.16em;color:#a6a5aa}.scrollcue{position:absolute;right:clamp(22px,5vw,76px);bottom:clamp(25px,5vh,54px);display:flex;gap:14px;align-items:center;font:10px var(--mono);letter-spacing:.15em;color:#a6a5aa}.scrollcue i{height:39px;width:1px;background:linear-gradient(#a6a5aa,transparent);display:inline-block;animation:cue 1.5s ease-in-out infinite}@keyframes cue{50%{transform:scaleY(.55);transform-origin:top;opacity:.55}}
     .hub{min-height:100svh;height:max(760px,100svh);position:relative;isolation:isolate;overflow:hidden;background:#101013}.hub-media,.hub-shade{position:absolute;inset:0;z-index:-2}.hub-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.02);transition:opacity 1300ms cubic-bezier(.65,0,.35,1),transform 1600ms ease}.hub-media img.is-active{opacity:1;transform:scale(1)}.hub-shade{z-index:-1;background:linear-gradient(180deg,#060609aa 0%,#06060920 28%,#07070955 58%,#070709d9 100%),linear-gradient(90deg,#0505074d,transparent 65%)}.hub-topline{position:absolute;top:100px;left:clamp(22px,5vw,76px);right:clamp(22px,5vw,76px);display:flex;justify-content:space-between;align-items:center;font:10px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:#ddd}.hub-topline span:last-child{color:#c8c7ca}.hub-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:min(80vw,760px);pointer-events:none}.hub-center h1{view-transition-name:sin3-title;position:absolute;left:50%;top:0;transform:translate(-50%,-50%);font-family:var(--sans);font-size:clamp(46px,8vw,112px);font-weight:500;letter-spacing:-.095em;line-height:.8;margin:0;text-shadow:0 5px 50px #0007}.hub-center p{position:absolute;top:clamp(54px,9vw,124px);left:0;right:0;font:10px var(--mono);letter-spacing:.24em;text-transform:uppercase;margin:0;color:#d1d0d2}
     .project-orbit{position:absolute;inset:0;pointer-events:none}.orbit-link{position:absolute;pointer-events:auto;display:inline-flex;align-items:center;gap:9px;padding:8px 0;color:#f8f7f4;font-size:clamp(12px,1vw,15px);font-weight:600;letter-spacing:.015em;text-shadow:0 2px 16px #0009;transition:color .25s,transform .35s}.orbit-link::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--acid);transform:scale(.55);opacity:0;transition:opacity .25s,transform .25s}.orbit-link:hover,.orbit-link:focus-visible{color:var(--acid);transform:translateY(-3px)}.orbit-link:hover::before,.orbit-link:focus-visible::before{opacity:1;transform:scale(1)}.orbit-link.active{color:var(--acid)}.orbit-link.active::before{opacity:1;transform:scale(1)}.orbit-link[data-project="tree"]{top:24%;left:13%}.orbit-link[data-project="eaves"]{top:33%;right:10%}.orbit-link[data-project="salt"]{bottom:23%;right:16%}.orbit-link[data-project="game"]{bottom:28%;left:11%}.hub-current{position:absolute;left:clamp(22px,5vw,76px);bottom:clamp(32px,6vh,72px);max-width:310px}.hub-current .eyebrow{font:10px var(--mono);letter-spacing:.18em;color:var(--acid);text-transform:uppercase}.hub-current h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3vw,42px);margin:9px 0 6px}.hub-current p{font-size:13px;color:#d0cfd2;margin:0}.view-project{position:absolute;right:clamp(22px,5vw,76px);bottom:clamp(32px,6vh,72px);border:1px solid #ffffff88;border-radius:999px;padding:13px 19px;font-size:12px;background:#1112;backdrop-filter:blur(10px);cursor:pointer;transition:background .25s,color .25s,border-color .25s}.view-project:hover{background:var(--acid);border-color:var(--acid);color:#111}.hub-back-intro{position:absolute;left:clamp(22px,5vw,76px);top:101px;font:9px var(--mono);letter-spacing:.15em;color:#ffffffb8}.hub-back-intro:hover{color:var(--acid)}.route-enter{animation:route-enter .55s both}@keyframes route-enter{from{opacity:.65;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.hub-scroll{position:absolute;right:50%;bottom:20px;transform:translateX(50%);font:9px var(--mono);letter-spacing:.15em;color:#f5f4f2a6}
@@ -30,7 +34,7 @@
   </style>
 <style id="about-journey-refresh">
     .about-page{background:#050506;color:#f3f2ef;overflow:clip}.about-journey{height:320svh;position:relative;isolation:isolate}.about-sticky{position:sticky;top:0;height:100svh;min-height:660px;overflow:hidden;background:#050506}.about-intro{position:absolute;z-index:2;left:50%;top:46%;width:min(56vw,1040px);transform:translate(-50%,-50%);text-align:center;pointer-events:none;will-change:transform,opacity}.about-lead{font-size:clamp(18px,1.55vw,27px);line-height:1.65;color:#f0efed;margin:0 auto;max-width:100%}.about-identity{position:absolute;z-index:4;left:clamp(24px,6.5vw,132px);top:14%;width:min(72vw,1000px);text-align:left;opacity:0;transform:translateY(16px);pointer-events:none;will-change:opacity,transform}.about-identity .eyebrow{color:#b6b4bb}.about-identity h1{font-family:var(--serif);font-size:clamp(60px,10vw,138px);font-weight:400;letter-spacing:-.06em;line-height:.98;margin:18px 0 0}.about-categories{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:10px;margin-top:28px}.about-categories span{border:1px solid #ffffff45;border-radius:999px;padding:9px 14px;font-size:11px;color:#ceccd1}.about-scatter{position:absolute;inset:0;z-index:3;pointer-events:none}.about-floating{position:absolute;left:0;top:0;display:block;box-sizing:border-box;overflow:hidden;background:transparent;border:1px solid transparent;border-radius:18px;color:#fff;will-change:left,top,width,height,transform,border-radius,background-color,box-shadow}.about-photo{position:absolute;left:0;top:0;width:100%;height:100%;display:block;overflow:hidden;background:#171719;border-radius:inherit;will-change:left,top,width,height,border-radius}.about-photo::before,.about-photo::after{display:none!important}.about-photo img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;user-select:none}.about-floating .about-card-info{position:absolute;left:6%;right:6%;bottom:4%;display:flex;align-items:center;justify-content:space-between;gap:8px;opacity:0;white-space:nowrap;will-change:opacity}.about-card-info strong{font-size:clamp(12px,1.15vw,18px);font-weight:600;color:#f7f6f4}.about-card-info span{font-size:clamp(10px,.95vw,15px);color:#98979b;text-align:right}.about-scroll-hint{position:absolute;z-index:5;bottom:28px;left:50%;transform:translateX(-50%);font:9px var(--mono);letter-spacing:.16em;color:#b9b8be;white-space:nowrap;transition:opacity .2s}.about-grid{position:absolute;top:278svh;left:0;right:0;height:42svh;min-height:300px;padding:0 clamp(20px,5.8vw,96px);display:block;opacity:0;z-index:1;will-change:opacity}.about-grid-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,18px);align-items:start}.about-story-card{position:relative;min-width:0;height:clamp(300px,42svh,460px);overflow:hidden;background:#111113;border:1px solid #ffffff12;border-radius:11px;color:#fff}.about-story-card .about-photo{left:14%;top:6%;width:72%;height:77%;border-radius:13px}.about-story-card .about-card-info{position:absolute;left:6%;right:6%;bottom:4%;display:flex;align-items:center;justify-content:space-between;gap:8px}.about-footer{position:relative;z-index:0;padding:25px clamp(22px,5vw,80px);background:#050506;color:#8e8c93;display:flex;justify-content:space-between;gap:20px;font:9px var(--mono);letter-spacing:.12em}
-    @media(max-width:760px){.about-journey{height:210svh}.about-sticky{min-height:680px}.about-intro{top:46%;width:84vw}.about-lead{font-size:clamp(16px,4.2vw,20px);line-height:1.65}.about-identity{left:8vw;top:14%;width:84vw}.about-identity h1{font-size:clamp(60px,18vw,94px);margin-top:15px}.about-categories{gap:7px;margin-top:24px}.about-categories span{font-size:10px;padding:8px 10px}.about-floating .about-card-info strong{font-size:11px}.about-floating .about-card-info span{font-size:9px}.about-scroll-hint{bottom:16px}.about-grid{top:128svh;height:82svh;min-height:580px;padding:0 6vw}.about-grid-items{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,clamp(230px,32svh,330px));gap:8px}.about-story-card{height:clamp(230px,32svh,330px);border-radius:9px}.about-story-card:nth-child(3){grid-column:1/-1;width:calc((100% - 8px)/2);justify-self:center}.about-story-card .about-photo{left:14%;top:6%;width:72%;height:77%;border-radius:10px}.about-story-card .about-card-info{gap:5px}.about-story-card .about-card-info strong{font-size:11px}.about-story-card .about-card-info span{font-size:9px}}
+    @media(max-width:760px){.about-journey{height:210svh}.about-sticky{min-height:680px}.about-intro{top:46%;width:84vw}.about-lead{font-size:clamp(16px,4.2vw,20px);line-height:1.65}.about-identity{left:8vw;top:14%;width:84vw}.about-identity h1{font-size:clamp(60px,18vw,94px);margin-top:15px}.about-categories{gap:7px;margin-top:24px}.about-categories span{font-size:10px;padding:8px 10px}.about-floating .about-card-info strong{font-size:11px}.about-floating .about-card-info span{font-size:9px}.about-scroll-hint{bottom:16px}.about-grid{top:128svh;height:82svh;min-height:580px;padding:0 6vw}.about-grid-items{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,clamp(230px,32svh,330px));gap:8px}.about-story-card{height:clamp(230px,32svh,330px);border-radius:9px}.about-story-card .about-photo{left:14%;top:6%;width:72%;height:77%;border-radius:10px}.about-story-card .about-card-info{gap:5px}.about-story-card .about-card-info strong{font-size:11px}.about-story-card .about-card-info span{font-size:9px}}
     @media(prefers-reduced-motion:reduce){.about-journey{height:auto}.about-sticky{position:relative;height:auto;min-height:100svh;padding:20vh 0 8vh}.about-intro{position:relative;left:auto;top:auto;width:min(84vw,720px);margin:0 auto;transform:none!important;opacity:1!important}.about-identity{display:none}.about-scatter,.about-scroll-hint{display:none}.about-grid{position:relative;top:auto;height:auto;min-height:0;padding:24px 6vw;opacity:1!important}.about-grid-items{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none}.about-story-card{height:clamp(230px,32svh,330px)}.about-story-card:nth-child(3){grid-column:auto;width:auto}.about-footer{position:relative}}
 
 
@@ -70,11 +74,112 @@
     .story-board-stack{display:grid;grid-template-columns:1fr;gap:18px;margin:28px 0 38px}
     .story-board-stack img{display:block;width:100%;height:auto;background:#eeedeb;cursor:zoom-in}
     .story-pdf{margin:32px 0 40px;border:1px solid #17171725;background:#e9e8e5}
-    .story-pdf-head{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 18px;font-size:12px}
-    .story-pdf-head a{color:#37363b;text-underline-offset:3px;white-space:nowrap}
-    .story-pdf iframe{display:block;width:100%;height:min(82svh,1000px);border:0;background:#f4f3f1}
+    .game-plan-preview{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr);gap:clamp(18px,3vw,34px);align-items:center;padding:clamp(14px,2.2vw,24px)}
+    .game-plan-standalone{padding:36px clamp(22px,8vw,130px);border-bottom:1px solid #17171726;background:var(--paper)}
+    .game-plan-standalone .story-pdf{margin:0}
+    .game-plan-cover{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#111113;box-shadow:0 10px 28px #1112}
+    .game-plan-copy .eyebrow{margin-bottom:14px;color:#77767b}
+    .game-plan-copy h4{font-family:var(--serif);font-size:clamp(20px,2.4vw,30px);font-weight:400;line-height:1.35;margin:0 0 10px;color:#202023}
+    .game-plan-copy p{font-size:13px;line-height:1.75;color:#66656a;margin:0 0 18px}
+    .game-plan-open{display:flex;min-height:48px;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:12px 16px;border:1px solid #151517;border-radius:999px;background:#171719;color:#f8f7f4;text-align:left;font-size:12px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+    .game-plan-open:hover{background:#d7ff73;border-color:#d7ff73;color:#171719}
+    .game-plan-open:focus-visible,.game-plan-dialog-close:focus-visible{outline:2px solid #202023;outline-offset:4px}
+    .game-plan-pdf-link{display:inline-flex;align-items:center;min-height:44px;margin-top:7px;color:#444349;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+    body.game-plan-modal-open{overflow:hidden}
+    .game-plan-dialog{width:min(96vw,1840px);height:min(94dvh,1120px);max-width:none;max-height:none;padding:0;border:0;border-radius:22px;background:#eeede9;color:#171719;overflow:hidden;box-shadow:0 24px 80px #09090b45}
+    .game-plan-dialog[open]{display:flex;flex-direction:column}
+    .game-plan-dialog::backdrop{background:#10101399;backdrop-filter:blur(7px)}
+    .game-plan-dialog-bar{height:58px;flex:0 0 58px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 18px 0 22px;border-bottom:1px solid #17171716;background:#eeede9}
+    .game-plan-dialog-bar strong{font-size:12px;font-weight:600;letter-spacing:.015em}
+    .game-plan-dialog-close{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;color:#252529;font-size:27px;line-height:1;cursor:pointer}
+    .game-plan-dialog-close:hover{background:#1717190d}
+    .game-plan-dialog-body{position:relative;flex:1;min-height:0;background:#e7e6e2}
+    .game-plan-dialog-body iframe{display:block;width:100%;height:100%;border:0;background:#e7e6e2}
     .detail-hero-copy h1.is-long-title{max-width:980px;font-size:clamp(38px,5.7vw,78px);line-height:1.16;letter-spacing:-.045em}
-    @media(max-width:760px){.detail-hero-copy h1.is-long-title{font-size:clamp(34px,9.2vw,56px);line-height:1.2}.story-subheading{margin-top:27px}.story-pdf iframe{height:62svh}.story-pdf-head{align-items:flex-start;flex-direction:column;gap:7px;padding:13px}}
+    @media(max-width:760px){.detail-hero-copy h1.is-long-title{font-size:clamp(34px,9.2vw,56px);line-height:1.2}.story-subheading{margin-top:27px}.game-plan-preview{grid-template-columns:minmax(0,1fr);gap:18px;padding:12px}.game-plan-copy{padding:2px 4px 5px}.game-plan-copy h4{font-size:24px}.game-plan-dialog{width:100vw;height:100dvh;border-radius:0;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px)}.game-plan-dialog-bar{height:54px;flex-basis:54px;padding-left:16px;padding-right:12px}.game-plan-dialog-bar strong{font-size:11px}}
+  </style>
+  <style id="resume-route-styles">
+    :root{--resume-paper:#f4f2ed;--resume-ink:#20211f;--resume-muted:#64645f;--resume-line:#c8c6bd}
+    body.resume-mode{background:var(--resume-paper);color:var(--resume-ink)}
+    .resume-page{min-height:100vh;background:var(--resume-paper);color:var(--resume-ink);padding:125px clamp(22px,6vw,80px) 72px}
+    .resume-shell{width:min(100%,820px);margin:0 auto}
+    .resume-return-top,.resume-return-bottom{display:inline-flex;align-items:center;gap:8px;color:var(--resume-ink);font-size:13px;text-decoration:underline;text-underline-offset:5px;text-decoration-color:#77776e;cursor:pointer}
+    .resume-return-top:focus-visible,.resume-return-bottom:focus-visible{outline:2px solid var(--resume-ink);outline-offset:5px}
+    .resume-hero{padding:44px 0 36px;border-bottom:1px solid var(--resume-line)}
+    .resume-brand{font:11px var(--mono);letter-spacing:.18em;color:var(--resume-muted)}
+    .resume-name{font-family:var(--serif);font-weight:500;font-size:clamp(80px,9vw,96px);line-height:1.08;letter-spacing:-.055em;margin:23px 0 9px;color:var(--resume-ink)}
+    .resume-headline{font-size:17px;line-height:1.7;margin:0;color:#42433f}
+    .resume-contact{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:22px;color:var(--resume-muted);font-size:14px;line-height:1.7}
+    .resume-contact a{color:inherit;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+    .resume-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:48px;border-top:1px solid var(--resume-line);border-bottom:1px solid var(--resume-line)}
+    .resume-stat{padding:24px 18px 25px 0;min-width:0}
+    .resume-stat+.resume-stat{padding-left:24px;border-left:1px solid var(--resume-line)}
+    .resume-stat strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(44px,6vw,64px);line-height:1.05;letter-spacing:-.04em}
+    .resume-stat span{display:block;margin-top:9px;font-size:13px;line-height:1.6;color:var(--resume-muted)}
+    .resume-section{padding-top:65px}
+    .resume-section-title{font-family:var(--serif);font-size:32px;font-weight:500;line-height:1.25;letter-spacing:-.025em;margin:0 0 25px;color:var(--resume-ink)}
+    .resume-entry{padding:23px 0 0;border-top:1px solid var(--resume-line)}
+    .resume-entry+.resume-entry{margin-top:34px}
+    .resume-entry h3{font-size:21px;font-weight:600;line-height:1.5;margin:0;color:var(--resume-ink)}
+    .resume-entry-meta{font-size:14px;line-height:1.7;color:var(--resume-muted);margin:6px 0 15px}
+    .resume-entry p,.resume-education p,.resume-strengths p{font-size:17px;line-height:1.85;color:#3f403c;margin:0;overflow-wrap:anywhere}
+    .resume-education{border-top:1px solid var(--resume-line);padding-top:21px}
+    .resume-education strong{display:block;font-size:20px;font-weight:600;line-height:1.5}
+    .resume-education p{margin-top:7px}
+    .resume-skill{display:grid;grid-template-columns:190px minmax(0,1fr);gap:20px;padding:17px 0;border-top:1px solid var(--resume-line)}
+    .resume-skill:last-child{border-bottom:1px solid var(--resume-line)}
+    .resume-skill h3{font-size:15px;font-weight:600;line-height:1.7;margin:0;color:var(--resume-muted)}
+    .resume-skill p{font-size:16px;line-height:1.8;margin:0;color:#3f403c;overflow-wrap:anywhere}
+    .resume-footer{margin-top:70px;padding:27px 0 0;border-top:1px solid var(--resume-line);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+    .resume-footer p{margin:0;color:var(--resume-muted);font-size:14px;line-height:1.8}
+    .resume-footer a{color:var(--resume-ink);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+    .resume-return-bottom{flex-shrink:0}
+    .about-intro{pointer-events:auto}
+    .about-resume-link{display:inline-flex;align-items:center;gap:8px;margin-top:23px;padding:9px 0;border-bottom:1px solid #ffffff78;color:#f3f2ef;font-size:12px;letter-spacing:.04em;pointer-events:auto;transition:color .2s,border-color .2s}
+    .about-resume-link:hover{color:var(--acid);border-color:var(--acid)}
+    .about-resume-link:focus-visible{color:var(--acid);border-color:var(--acid);outline:2px solid var(--acid);outline-offset:4px}
+    .about-profile-card{display:block;color:inherit;text-decoration:none;cursor:pointer}
+    .about-profile-card:focus-visible{outline:2px solid #d7ff73;outline-offset:5px}
+    .about-profile-card .about-photo{background:#202221;container-type:inline-size}
+    .about-profile-card .about-photo img{display:none}
+    .profile-cover-art{position:absolute;inset:0;overflow:hidden;box-sizing:border-box;padding:9%;background:#202221;color:#EAE8E1;isolation:isolate}
+    .profile-cover-brand{position:absolute;z-index:2;top:9%;left:9%;font:11px var(--mono);letter-spacing:.12em;color:#969A94}
+    .profile-cover-watermark{position:absolute;z-index:0;right:-.02em;bottom:-.12em;font:700 48cqw/.8 Arial,sans-serif;letter-spacing:-.11em;color:rgba(234,232,225,.045);user-select:none}
+    .profile-cover-copy{position:absolute;z-index:2;left:9%;right:9%;bottom:11%;display:grid;gap:8px}
+    .profile-cover-rule{display:block;width:36px;height:1px;margin-bottom:3px;background:rgba(234,232,225,.45)}
+    .profile-cover-copy strong{font-family:var(--serif);font-size:clamp(30px,2.5vw,36px);font-weight:500;line-height:1.18;letter-spacing:-.035em;color:#EAE8E1}
+    .profile-cover-copy span{font-size:15px;line-height:1.4;color:#969A94}
+    @media(max-width:760px){
+      .resume-page{padding:104px 22px 52px}.resume-hero{padding:34px 0 27px}.resume-name{font-size:clamp(52px,16vw,60px);margin-top:19px}.resume-headline{font-size:16px}.resume-contact{font-size:13px;gap:5px 14px}.resume-stats{grid-template-columns:1fr;margin-top:34px}.resume-stat{padding:18px 0;display:flex;align-items:baseline;gap:14px}.resume-stat+.resume-stat{padding-left:0;border-left:0;border-top:1px solid var(--resume-line)}.resume-stat strong{font-size:48px;min-width:150px}.resume-stat span{margin-top:0;font-size:13px}.resume-section{padding-top:49px}.resume-section-title{font-size:26px;margin-bottom:20px}.resume-entry{padding-top:18px}.resume-entry h3{font-size:19px}.resume-entry-meta{font-size:13px}.resume-entry p,.resume-education p,.resume-strengths p{font-size:16px;line-height:1.8}.resume-education strong{font-size:18px}.resume-skill{grid-template-columns:1fr;gap:3px;padding:14px 0}.resume-skill p{font-size:15px;line-height:1.75}.resume-footer{margin-top:54px;align-items:flex-start;flex-direction:column;gap:18px}.about-resume-link{margin-top:19px}.about-intro{width:84vw}.profile-cover-art{padding:8%}.profile-cover-brand{top:8%;left:8%;font-size:10px}.profile-cover-copy{left:8%;right:8%;bottom:11%;gap:6px}.profile-cover-copy strong{font-size:clamp(22px,5.5vw,34px)}.profile-cover-copy span{font-size:12px}
+    }
+    @media(max-width:360px){.resume-page{padding-right:18px;padding-left:18px}.resume-stat strong{min-width:132px;font-size:44px}.profile-cover-brand-detail{display:none}}
+  </style>
+  <style id="mobile-about-grid-fix">
+    @media(max-width:760px){
+      .about-grid-items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,clamp(230px,32svh,330px));grid-auto-columns:auto;grid-auto-rows:auto;grid-auto-flow:row;gap:8px;align-items:start}
+      .about-grid-items>.about-story-card{grid-column:auto;grid-row:auto;width:auto;justify-self:stretch;will-change:auto}
+      .about-grid-items>.about-story-card:nth-child(1){grid-area:1/1}.about-grid-items>.about-story-card:nth-child(2){grid-area:1/2}.about-grid-items>.about-story-card:nth-child(3){grid-area:2/1}.about-grid-items>.about-story-card:nth-child(4){grid-area:2/2}.about-grid-items>.about-story-card:nth-child(5){grid-area:3/1}.about-grid-items>.about-story-card:nth-child(6){grid-area:3/2}
+      body.about-mode .topbar{mix-blend-mode:normal;color:#fff;background:rgba(5,5,6,.92);backdrop-filter:blur(10px);padding:8px 12px}
+      body.about-mode .brand{flex-shrink:0;font-size:16px}
+      body.about-mode .toplinks{max-width:none;flex-wrap:wrap;gap:4px 8px;justify-content:flex-end}
+      body.about-mode .toplinks button,body.about-mode .toplinks a{font-size:9px;letter-spacing:.04em}
+    }
+  </style>
+  <style id="salt-album-and-category-card">
+    .work-card-coursework{display:block;color:#fff;text-decoration:none}
+    .work-card-coursework:focus-visible{outline:2px solid #d7ff73;outline-offset:5px}
+    .work-card-coursework .work-card-copy h2{color:#f2f0ec}
+    .work-card-coursework .work-card-copy p{color:#e2e0dd}
+    .coursework-album-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .coursework-album-reader{margin:0;background:#e9e8e5}
+    .coursework-album-preview{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:0}
+    .coursework-album-cover{aspect-ratio:16/9;max-height:none;object-fit:cover;background:#171719;padding:0;box-shadow:none}
+    .coursework-album-copy{padding:clamp(18px,2.5vw,30px)}
+    .coursework-album-copy h4{margin-top:7px}
+    .salt-album-preview{grid-template-columns:minmax(0,1.2fr) minmax(230px,.8fr)}
+    .salt-album-cover{aspect-ratio:1.295;max-height:480px;object-fit:contain;background:#f7f4ed;padding:clamp(10px,1.6vw,22px)}
+    .salt-album-reader .game-plan-open{justify-content:center}
+    @media(max-width:760px){.coursework-album-grid{grid-template-columns:minmax(0,1fr)}.coursework-album-reader .game-plan-open{width:100%}.salt-album-preview{grid-template-columns:minmax(0,1fr)}.salt-album-cover{max-height:62svh}.salt-album-reader .game-plan-open{width:100%}}
   </style>
 </head>
 <body>
@@ -89,8 +194,65 @@
   </header>
   <main id="app"></main>
   <dialog class="lightbox" id="lightbox"><button class="lightbox-close" aria-label="关闭图片">×</button><img alt=""><div class="lightbox-caption"></div></dialog>
+  <script id="resume-content-data" type="application/json">
+{
+  "name": "桑艺珊",
+  "brand": "SIN3",
+  "headline": "求职意向：环境／景观／空间设计实习",
+  "contact": "1403072867@qq.com",
+  "locations": [
+    "成都",
+    "重庆",
+    "北京"
+  ],
+  "availability": "寒假或周末可到岗",
+  "stats": [
+    {"value": "2300亩+", "label": "设计范围"},
+    {"value": "2200元+", "label": "单日销售额"},
+    {"value": "90+", "label": "专业课平均分"}
+  ],
+  "experiences": [
+    {
+      "section": "项目经历",
+      "title": "重庆大足盐河社区更新改造",
+      "meta": "政府项目·课题组",
+      "scale": "项目规模约2300亩",
+      "description": "参与政府项目社区更新项目课，参与整体方案策划与总体场地规划及设计落地，负责D区节点的建筑、构筑物及景观环境设计。从前期调研、概念草图、空间布局到三维建模与效果图出图，完成所负责区域的方案草稿与视觉表达，并参与部分项目报价整理、活动设计与入驻资本规划及三产结合与opc孵化研究。结合场地条件与使用需求，推进节点方案细化及整体空间关系梳理。"
+    },
+    {
+      "section": "实践经历",
+      "title": "小鸡合作社活动",
+      "meta": "营销与现场售卖",
+      "description": "参与活动营销与日常售卖，将活动推广与现场销售结合，积累面向实际消费者的沟通和销售经验。活动期间单日销售额达2200元以上。"
+    }
+  ],
+  "education": {
+    "school": "四川美术学院",
+    "major": "环境设计",
+    "status": "本科在读",
+    "year": "2024级",
+    "graduation": "预计2028年毕业"
+  },
+  "skills": [
+    {
+      "label": "场地与方案设计",
+      "text": "场地调研、概念策划、空间布局、节点建筑与构筑物设计、景观环境设计。"
+    },
+    {
+      "label": "建模与视觉表达",
+      "text": "使用SketchUp、Rhino进行三维建模，结合D5、Enscape制作效果图，使用Photoshop处理图像，使用AutoCAD辅助图纸绘制。"
+    },
+    {
+      "label": "AI协作",
+      "text": "将AI用于资料梳理、数据分析、图文与视频表达，及个人作品集网页制作；具有优秀随时代发展学习的能力。"
+    }
+  ],
+  "strengths": "具有优秀的团队沟通能力，有带领小组的经验，能够组织任务分工、协调团队进度并开展对外沟通。专业课平均分90+。具备从场地调研、概念草图、节点设计到建模渲染、图纸表达及落地的连续实践经验；同时参与活动营销与现场售卖，能从实际使用和消费场景思考空间需求。"
+}
+</script>
   <script>
     const A = './assets/';
+    const resumeData = JSON.parse(document.querySelector('#resume-content-data').textContent);
     const projects = {
       tree: {
         id:'tree', title:'树荫', en:'SHADE / REST SPACE', category:'环境设计', type:'课程设计', location:'四川美术学院虎溪校区南门附近', cover:'tree-01.webp', images:['tree-01.webp','tree-02.webp','tree-03.webp','tree-04.webp','tree-05.webp'],
@@ -384,18 +546,21 @@
       }
     });
     const categoryInfo = {
-      environment:{title:'环境设计',en:'ENVIRONMENT DESIGN',intro:'从校园场地、社区空间到乡村农文旅场景，记录不同尺度的空间设计练习。',ids:['tree','eaves','salt']},
+      environment:{title:'环境设计',en:'ENVIRONMENT DESIGN',intro:'从校园场地、社区空间到乡村农文旅场景，记录不同尺度的空间设计练习。',ids:['eaves','salt','tree']},
       game:{title:'游戏策划',en:'GAME DESIGN',intro:'从世界设定与地图出发，组织探索路线、交互机制和玩家体验。',ids:['game']},
       vibe:{title:'Vibe Coding',en:'DIGITAL EXPERIMENTS',intro:'一个持续更新的数字实验分类。',ids:[]}
     };
     const app=document.querySelector('#app');
     let activeProject='tree', cycleTimer=null,restartHubCycle=null;
     const esc=(s)=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    function go(hash,animate=false){const change=()=>{history.pushState({},'',hash);render();window.scrollTo({top:0,behavior:'auto'})};if(animate&&document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.startViewTransition(change)}else{change();if(animate){app.classList.remove('route-enter');void app.offsetWidth;app.classList.add('route-enter');setTimeout(()=>app.classList.remove('route-enter'),650)}}}
+    function go(hash,animate=false,options={}){const from=currentRoute(),saved={...(history.state||{}),scrollY:window.scrollY};if(from.type==='about'&&hash==='#resume'&&options.resumeFocusCard===3)saved.resumeFocusCard=3;history.replaceState(saved,'');const nextState={};if(hash==='#resume'&&from.type==='about'){nextState.resumeFromAbout=true;if(options.resumeFocusCard===3)nextState.resumeFocusCard=3}const change=()=>{history.pushState(nextState,'',hash);render();window.scrollTo({top:0,behavior:'auto'})};if(animate&&document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.startViewTransition(change)}else{change();if(animate){app.classList.remove('route-enter');void app.offsetWidth;app.classList.add('route-enter');setTimeout(()=>app.classList.remove('route-enter'),650)}}}
     function currentRoute(){const h=location.hash.replace(/^#/, '');if(!h||h==='home'||h==='intro')return {type:'home',stage:'intro'};if(h==='work')return {type:'home',stage:'work'};const [type,id]=h.split('/');return {type,id};}
+    function updateTopbarGlass(){const route=currentRoute(),bar=document.querySelector('.topbar');let tone='';if(route.type==='project'){const hero=document.querySelector('.detail-hero');if(hero&&hero.getBoundingClientRect().bottom<=(bar?.offsetHeight||0)+10)tone='light'}else if(window.scrollY>48){if(route.type==='about')tone='dark';else if(route.type==='category'||route.type==='coursework'||route.type==='resume')tone='light'}document.body.classList.toggle('nav-glass-light',tone==='light');document.body.classList.toggle('nav-glass-dark',tone==='dark')}
+    function scrollToAboutCards(){requestAnimationFrame(()=>{const grid=document.querySelector('#about-journey .about-grid');if(!grid)return;window.scrollTo({top:Math.max(0,grid.getBoundingClientRect().top+window.scrollY-window.innerHeight*.08),behavior:'auto'});updateAboutFlow()})}
+    function returnResumeToAbout(){if(history.state?.resumeFromAbout){history.back();return}go('#about');scrollToAboutCards()}
     function nav(){
       document.querySelectorAll('[data-nav-category]').forEach(b=>b.onclick=()=>go('#category/'+b.dataset.navCategory));
-      document.querySelector('[data-nav-about]').onclick=()=>go('#about');
+      document.querySelector('[data-nav-about]').onclick=()=>currentRoute().type==='resume'?returnResumeToAbout():go('#about');
       document.querySelector('.brand').onclick=e=>{e.preventDefault();go('#intro')};
     }
     function projectCard(p,i){return `<a class="work-card fade-in" href="#project/${p.id}" data-open-project="${p.id}" style="animation-delay:${i*80}ms"><img src="${A+p.cover}" alt="${esc(p.title)} 项目效果图" loading="lazy"><span class="card-arrow">↗</span><div class="work-card-copy"><span class="eyebrow">${esc(p.category)}　/　${esc(p.type)}</span><h2>${esc(p.title)}</h2><p>${esc(p.tags.slice(0,2).join(' · '))}</p></div></a>`;}
@@ -439,7 +604,9 @@
       document.querySelector('.hub-back-intro').onclick=e=>{e.preventDefault();go('#intro',true)};
       startCycle();nav();
     }
-    function renderCategory(id){const c=categoryInfo[id]||categoryInfo.environment;const list=c.ids.map(x=>projects[x]);app.innerHTML=`<section class="page-light"><div class="page-head"><div><div class="eyebrow">${esc(c.en)}　/　${String(Object.keys(categoryInfo).indexOf(id)+1).padStart(2,'0')}</div><h1>${esc(c.title)}</h1></div><p>${esc(c.intro)}</p></div>${list.length?`<div class="project-grid">${list.map(projectCard).join('')}</div>`:`<div class="empty-state"><span class="num">01 / OPEN SPACE</span><div><h2>作品正在整理中</h2><p>这个分类已经为后续的数字实验留好位置。新作品完成后会出现在这里。</p></div></div>`}<div style="margin-top:42px"><button class="project-nav-back" style="border:0;background:none;color:#55545a;padding:0;cursor:pointer" onclick="history.back()">← 返回上一页</button></div></section><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>${esc(c.en)}</span></footer>`;app.querySelectorAll('[data-open-project]').forEach(a=>a.onclick=e=>{e.preventDefault();go('#project/'+a.dataset.openProject)});nav();}
+    function renderCategory(id){const c=categoryInfo[id]||categoryInfo.environment;const list=c.ids.map(x=>projects[x]);const cards=list.map(projectCard).join('')+(id==='environment'?`<a class="work-card work-card-coursework fade-in" href="#coursework" data-open-coursework style="animation-delay:${list.length*80}ms" aria-label="打开其他课设"><img src="${A}new/coursework/interior-cover.png" alt="暖木色住宅客厅，其他课设封面" loading="lazy"><span class="card-arrow">↗</span><div class="work-card-copy"><span class="eyebrow">ENVIRONMENT DESIGN　/　ARCHIVE</span><h2>其他课设</h2><p>室内设计 · 建筑初步</p></div></a>`:'');app.innerHTML=`<section class="page-light"><div class="page-head"><div><div class="eyebrow">${esc(c.en)}　/　${String(Object.keys(categoryInfo).indexOf(id)+1).padStart(2,'0')}</div><h1>${esc(c.title)}</h1></div><p>${esc(c.intro)}</p></div>${list.length?`<div class="project-grid">${cards}</div>`:`<div class="empty-state"><span class="num">01 / OPEN SPACE</span><div><h2>作品正在整理中</h2><p>这个分类已经为后续的数字实验留好位置。新作品完成后会出现在这里。</p></div></div>`}<div style="margin-top:42px"><button class="project-nav-back" style="border:0;background:none;color:#55545a;padding:0;cursor:pointer" onclick="history.back()">← 返回上一页</button></div></section><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>${esc(c.en)}</span></footer>`;app.querySelectorAll('[data-open-project]').forEach(a=>a.onclick=e=>{e.preventDefault();go('#project/'+a.dataset.openProject)});app.querySelectorAll('[data-open-coursework]').forEach(a=>a.onclick=e=>{e.preventDefault();go('#coursework')});nav();}
+    function courseworkAlbumCard(kind,cover,title,pages,description,eyebrow){return `<article class="story-pdf coursework-album-reader" data-portfolio-reader data-reader-kind="${kind}"><div class="game-plan-preview coursework-album-preview"><img class="game-plan-cover coursework-album-cover" src="${A+cover}" alt="${esc(title)}原始作业封面" loading="lazy"><div class="game-plan-copy coursework-album-copy"><div class="eyebrow">${esc(eyebrow)}　/　${pages} PAGES</div><h4>${esc(title)}</h4><p>${esc(description)}</p><button class="game-plan-open" type="button" data-game-plan-open><span>翻阅${esc(title)} · ${pages} 页</span><span aria-hidden="true">↗</span></button></div></div><dialog class="game-plan-dialog" aria-label="${esc(title)}翻页阅读器"><div class="game-plan-dialog-bar"><strong>${esc(title)}</strong><button class="game-plan-dialog-close" type="button" data-game-plan-close aria-label="关闭${esc(title)}阅读器">×</button></div><div class="game-plan-dialog-body" data-game-plan-frame-slot></div></dialog></article>`;}
+    function renderCoursework(){const cards=[courseworkAlbumCard('coursework-interior','new/coursework/interior-cover.png','室内设计',27,'三份住宅课设按空间行为、尺寸与材料逻辑合并去重，末页附完整原始展板。','INTERIOR DESIGN'),courseworkAlbumCard('coursework-architecture','new/coursework/architecture-cover.jpg','建筑初步',19,'建筑初步课程结课作业原作第 1–19 页。','ARCHITECTURE BASICS')].join('');app.innerHTML=`<section class="page-light"><div class="page-head"><div><div class="eyebrow">ENVIRONMENT DESIGN　/　ARCHIVE</div><h1>其他课设</h1></div><p>两本课程作品册，分别收录室内住宅设计与建筑初步练习。</p></div><div class="coursework-album-grid">${cards}</div><div style="margin-top:42px"><button class="project-nav-back" style="border:0;background:none;color:#55545a;padding:0;cursor:pointer" onclick="go('#category/environment')">← 返回环境设计</button></div></section><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>COURSEWORK ARCHIVE</span></footer>`;app.querySelectorAll('[data-portfolio-reader]').forEach(root=>bindPortfolioReader(root,root.dataset.readerKind));nav();}
     function storyBlockMarkup(block){
       if(block.type==='text')return `<p>${esc(block.text)}</p>`;
       if(block.type==='subheading')return `<h4 class="story-subheading">${esc(block.text)}</h4>`;
@@ -447,7 +614,7 @@
       if(block.type==='image')return figure(block);
       if(block.type==='gallery')return `<div class="story-block-gallery ${esc(block.layout||'two')}">${block.items.map(figure).join('')}</div>`;
       if(block.type==='boards')return `<div class="story-board-stack">${block.items.map((src,j)=>`<img src="${A+src}" alt="项目展板 ${j+1}" data-zoom="${A+src}" data-caption="展板 ${j+1}" loading="lazy">`).join('')}</div>`;
-      if(block.type==='pdf')return `<div class="story-pdf"><div class="story-pdf-head"><strong>${esc(block.title||'完整策划案 PDF')}</strong><a href="${A+block.src}" target="_blank" rel="noopener">在新窗口查看 PDF ↗</a></div><iframe src="${A+block.src}#view=FitH" title="${esc(block.title||'项目 PDF')}" loading="lazy"></iframe></div>`;
+      if(block.type==='pdf')return `<div class="story-pdf game-plan-reader" data-game-plan-reader data-portfolio-reader data-reader-kind="game" data-pdf-src="${A+block.src}"><div class="game-plan-preview"><img class="game-plan-cover" src="${A}new/game-page-01.jpg" alt="浮岚——雾与镜游戏策划案封面，第 1 页" loading="lazy"><div class="game-plan-copy"><div class="eyebrow">GAME PLAN　/　16 PAGES</div><h4>${esc(block.title||'完整策划案 PDF')}</h4><p>从封面开始，按页翻阅完整游戏世界设定、地图规划与探索流程。</p><button class="game-plan-open" type="button" data-game-plan-open><span>翻阅完整策划案 · 16 页</span><span aria-hidden="true">↗</span></button><a class="game-plan-pdf-link" href="${A+block.src}" target="_blank" rel="noopener">在新窗口打开原 PDF ↗</a></div></div><dialog class="game-plan-dialog" aria-label="浮岚——雾与镜完整策划案"><div class="game-plan-dialog-bar"><strong>${esc(block.title||'完整策划案 PDF')}</strong><button class="game-plan-dialog-close" type="button" data-game-plan-close aria-label="关闭策划案阅读器">×</button></div><div class="game-plan-dialog-body" data-game-plan-frame-slot></div></dialog></div>`;
       return '';
     }
     function storyMarkup(p,s,i){
@@ -461,20 +628,26 @@
       }
       return `<section class="story-section"><div class="story-label"><div class="eyebrow">${esc(s.label||String(i+1).padStart(2,'0'))}</div><h3>${esc(s.title)}</h3></div><div class="story-copy">${s.blocks?'':`<p>${esc(s.text)}</p>`}${media}${!s.blocks&&s.caption?`<div class="image-caption">${esc(s.caption)}</div>`:''}</div></section>`;
     }
-    function renderProject(id){const p=projects[id]||projects.tree;activeProject=p.id;const roles=p.roles?`<div class="meta-item"><span>个人贡献</span><strong>${esc(p.roles)}</strong></div>`:'';const facts=`<div class="detail-meta"><div class="meta-item"><span>分类</span><strong>${esc(p.category)}</strong></div><div class="meta-item"><span>项目类型</span><strong>${esc(p.type)}</strong></div>${p.location?`<div class="meta-item"><span>场地</span><strong>${esc(p.location)}</strong></div>`:''}<div class="meta-item"><span>关键词</span><strong>${esc(p.tags.join(' · '))}</strong></div>${roles}</div>`;const sections=p.sections.map((s,i)=>storyMarkup(p,s,i)).join('');const ids=Object.keys(projects);const idx=ids.indexOf(p.id);const prev=projects[ids[(idx-1+ids.length)%ids.length]],next=projects[ids[(idx+1)%ids.length]];
-      app.innerHTML=`<article class="detail"><header class="detail-hero"><img src="${A+p.cover}" alt="${esc(p.detailTitle||p.title)} 主视觉"><div class="detail-hero-copy"><div class="eyebrow">${esc(p.category)}　/　${esc(p.type)}</div><h1 class="${p.detailTitle?'is-long-title':''}">${esc(p.detailTitle||p.title)}</h1><p>${esc(p.summary)}</p></div></header><section class="detail-overview">${facts}${p.conceptTitle?`<div class="overview-copy"><div class="eyebrow">DESIGN CONCEPT</div><h2>${esc(p.conceptTitle)}</h2><p>${esc(p.concept||p.summary)}</p></div>`:`<div class="overview-copy"><div class="eyebrow">PROJECT OVERVIEW</div><h2>快速阅览</h2><p>${esc(p.overview||p.summary)}</p></div>`}</section>${sections}<nav class="project-nav" aria-label="项目切换"><button onclick="go('#project/${prev.id}')"><span>PREVIOUS PROJECT</span><strong>${esc(prev.title)}　←</strong></button><button onclick="go('#project/${next.id}')"><span>NEXT PROJECT</span><strong>→　${esc(next.title)}</strong></button></nav><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>${esc(p.category)}</span></footer></article><button class="back-home" onclick="go('#category/${p.id==='game'?'game':'environment'}')">← 返回${p.id==='game'?'游戏策划':'环境设计'}</button>`;
-      app.querySelectorAll('[data-zoom]').forEach(img=>img.addEventListener('click',()=>openLightbox(img.dataset.zoom,img.dataset.caption||img.alt)));nav();
+    const portfolioReaderConfigs={game:{count:16,src:'./game-flipbook.html',namespace:'sin3-game-plan',title:'浮岚——雾与镜策划案翻页阅读器'},salt:{count:13,src:'./salt-flipbook.html',namespace:'sin3-salt-album',title:'稻香虾跃处空间影集翻页阅读器'},'coursework-interior':{count:27,src:'./coursework-flipbook.html?album=interior',namespace:'sin3-coursework-interior',title:'室内设计课设翻页阅读器'},'coursework-architecture':{count:19,src:'./coursework-flipbook.html?album=architecture',namespace:'sin3-coursework-architecture',title:'建筑初步课设翻页阅读器'}};
+    const lastPortfolioReaderPages={game:1,salt:1,'coursework-interior':1,'coursework-architecture':1};let activeGamePlanReader=null;
+    function portfolioReaderSpreadAvailable(){return window.innerWidth>=1400}
+    function createPortfolioReaderFrame(reader){if(reader.frame){reader.frame.remove();reader.frame=null}const config=reader.config,frame=document.createElement('iframe'),separator=config.src.includes('?')?'&':'?';frame.className='game-plan-frame';frame.title=config.title;frame.allow='fullscreen';frame.src=`${config.src}${separator}page=${reader.page}&mode=${reader.mode}&canSpread=${reader.canSpread?'1':'0'}&namespace=${encodeURIComponent(config.namespace)}`;frame.addEventListener('load',()=>{if(activeGamePlanReader!==reader||reader.frame!==frame)return;frame.contentWindow.postMessage({namespace:config.namespace,type:'sync',page:reader.page,mode:reader.mode},location.origin)});reader.frame=frame;reader.slot.replaceChildren(frame)}
+    function closeGamePlanReader({restoreFocus=true,restoreScroll=true}={}){const reader=activeGamePlanReader;if(!reader)return;activeGamePlanReader=null;window.removeEventListener('message',reader.onMessage);reader.resizeObserver?.disconnect();clearTimeout(reader.resizeTimer);document.body.classList.remove('game-plan-modal-open');if(reader.frame){reader.frame.remove();reader.frame=null}reader.slot.replaceChildren();if(reader.dialog.open)reader.dialog.close();if(restoreScroll)window.scrollTo({top:reader.scrollY,behavior:'auto'});if(restoreFocus&&reader.opener?.isConnected)requestAnimationFrame(()=>reader.opener.focus({preventScroll:true}))}
+    function bindPortfolioReader(root,kind){const config=portfolioReaderConfigs[kind],dialog=root.querySelector('.game-plan-dialog'),slot=root.querySelector('[data-game-plan-frame-slot]'),opener=root.querySelector('[data-game-plan-open]'),closer=root.querySelector('[data-game-plan-close]');if(!config||!dialog||!slot||!opener||!closer)return;function open(){if(activeGamePlanReader)return;const reader={config,dialog,slot,opener,scrollY:window.scrollY,page:lastPortfolioReaderPages[kind]||1,mode:'single',canSpread:portfolioReaderSpreadAvailable(),frame:null,lastSize:{width:0,height:0},resizeTimer:0,resizeObserver:null,onMessage:null};reader.onMessage=event=>{if(activeGamePlanReader!==reader||event.origin!==location.origin||event.source!==reader.frame?.contentWindow)return;const data=event.data;if(!data||typeof data!=='object'||data.namespace!==config.namespace||typeof data.type!=='string')return;if(data.type==='page'&&Number.isInteger(data.page)&&data.page>=1&&data.page<=config.count){reader.page=data.page;lastPortfolioReaderPages[kind]=data.page}else if(data.type==='set-mode'&&(data.mode==='single'||data.mode==='spread')&&Number.isInteger(data.page)&&data.page>=1&&data.page<=config.count){if(data.mode==='spread'&&!reader.canSpread)return;reader.page=data.page;lastPortfolioReaderPages[kind]=data.page;if(reader.mode!==data.mode){reader.mode=data.mode;createPortfolioReaderFrame(reader)}}else if(data.type==='close')closeGamePlanReader()};activeGamePlanReader=reader;window.addEventListener('message',reader.onMessage);document.body.classList.add('game-plan-modal-open');dialog.showModal();closer.focus({preventScroll:true});const rect=slot.getBoundingClientRect();reader.lastSize={width:rect.width,height:rect.height};createPortfolioReaderFrame(reader);reader.resizeObserver=new ResizeObserver(()=>{if(activeGamePlanReader!==reader)return;const nextCanSpread=portfolioReaderSpreadAvailable(),now=slot.getBoundingClientRect(),dw=Math.abs(now.width-reader.lastSize.width),dh=Math.abs(now.height-reader.lastSize.height),breakpointChanged=nextCanSpread!==reader.canSpread,sizeChanged=Math.max(dw,dh)>=28;if(!breakpointChanged&&!sizeChanged)return;const focused=reader.frame?.contentDocument?.activeElement,mustForceSingle=!nextCanSpread&&reader.mode==='spread';if(!breakpointChanged&&!mustForceSingle&&focused&&/^(INPUT|TEXTAREA|SELECT)$/.test(focused.tagName))return;clearTimeout(reader.resizeTimer);reader.resizeTimer=setTimeout(()=>{if(activeGamePlanReader!==reader)return;const settled=slot.getBoundingClientRect(),canSpread=portfolioReaderSpreadAvailable(),widthDelta=Math.abs(settled.width-reader.lastSize.width),heightDelta=Math.abs(settled.height-reader.lastSize.height);if(canSpread===reader.canSpread&&Math.max(widthDelta,heightDelta)<28)return;reader.canSpread=canSpread;if(!reader.canSpread)reader.mode='single';reader.lastSize={width:settled.width,height:settled.height};createPortfolioReaderFrame(reader)},180)});reader.resizeObserver.observe(slot)}opener.addEventListener('click',open);closer.addEventListener('click',()=>closeGamePlanReader());dialog.addEventListener('cancel',event=>{event.preventDefault();closeGamePlanReader()});dialog.addEventListener('click',event=>{if(event.target===dialog)closeGamePlanReader()})}
+    function renderProject(id){const p=projects[id]||projects.tree;activeProject=p.id;const roles=p.roles?`<div class="meta-item"><span>个人贡献</span><strong>${esc(p.roles)}</strong></div>`:'';const facts=`<div class="detail-meta"><div class="meta-item"><span>分类</span><strong>${esc(p.category)}</strong></div><div class="meta-item"><span>项目类型</span><strong>${esc(p.type)}</strong></div>${p.location?`<div class="meta-item"><span>场地</span><strong>${esc(p.location)}</strong></div>`:''}<div class="meta-item"><span>关键词</span><strong>${esc(p.tags.join(' · '))}</strong></div>${roles}</div>`;const gamePlanBlock=p.id==='game'?p.sections.flatMap(s=>s.blocks||[]).find(block=>block.type==='pdf'):null;const gamePlanEntry=gamePlanBlock?`<section class="game-plan-standalone" aria-label="完整游戏策划案">${storyBlockMarkup(gamePlanBlock)}</section>`:'';const saltAlbumEntry=p.id==='salt'?`<section class="game-plan-standalone salt-album-standalone" aria-label="稻香虾跃处空间影集"><div class="story-pdf salt-album-reader" data-portfolio-reader data-reader-kind="salt"><div class="game-plan-preview salt-album-preview"><img class="game-plan-cover salt-album-cover" src="${A}new/salt-album-01.webp" alt="稻香虾跃处空间影集，第 1 页" loading="lazy"><div class="game-plan-copy"><div class="eyebrow">SPATIAL ALBUM　/　13 PAGES</div><h4>稻香虾跃处 · 空间影集</h4><p>沿着稻田与建筑，翻阅 13 幅空间场景。</p><button class="game-plan-open" type="button" data-game-plan-open>翻阅空间影集 · 13 页</button></div></div><dialog class="game-plan-dialog" aria-label="稻香虾跃处 · 空间影集"><div class="game-plan-dialog-bar"><strong>稻香虾跃处 · 空间影集</strong><button class="game-plan-dialog-close" type="button" data-game-plan-close aria-label="关闭空间影集">×</button></div><div class="game-plan-dialog-body" data-game-plan-frame-slot></div></dialog></div></section>`:'';const sections=p.sections.map((s,i)=>{if(!gamePlanBlock||!s.blocks?.includes(gamePlanBlock))return storyMarkup(p,s,i);return storyMarkup(p,{...s,blocks:s.blocks.filter(block=>block!==gamePlanBlock)},i)}).join('');const ids=Object.keys(projects);const idx=ids.indexOf(p.id);const prev=projects[ids[(idx-1+ids.length)%ids.length]],next=projects[ids[(idx+1)%ids.length]];
+      app.innerHTML=`<article class="detail"><header class="detail-hero"><img src="${A+p.cover}" alt="${esc(p.detailTitle||p.title)} 主视觉"><div class="detail-hero-copy"><div class="eyebrow">${esc(p.category)}　/　${esc(p.type)}</div><h1 class="${p.detailTitle?'is-long-title':''}">${esc(p.detailTitle||p.title)}</h1><p>${esc(p.summary)}</p></div></header><section class="detail-overview">${facts}${p.conceptTitle?`<div class="overview-copy"><div class="eyebrow">DESIGN CONCEPT</div><h2>${esc(p.conceptTitle)}</h2><p>${esc(p.concept||p.summary)}</p></div>`:`<div class="overview-copy"><div class="eyebrow">PROJECT OVERVIEW</div><h2>快速阅览</h2><p>${esc(p.overview||p.summary)}</p></div>`}</section>${gamePlanEntry}${saltAlbumEntry}${sections}<nav class="project-nav" aria-label="项目切换"><button onclick="go('#project/${prev.id}')"><span>PREVIOUS PROJECT</span><strong>${esc(prev.title)}　←</strong></button><button onclick="go('#project/${next.id}')"><span>NEXT PROJECT</span><strong>→　${esc(next.title)}</strong></button></nav><footer class="site-footer"><span>SIN3　/　SANG YISHAN</span><span>${esc(p.category)}</span></footer></article><button class="back-home" onclick="go('#category/${p.id==='game'?'game':'environment'}')">← 返回${p.id==='game'?'游戏策划':'环境设计'}</button>`;
+      app.querySelectorAll('[data-zoom]').forEach(img=>img.addEventListener('click',()=>openLightbox(img.dataset.zoom,img.dataset.caption||img.alt)));app.querySelectorAll('[data-portfolio-reader]').forEach(root=>bindPortfolioReader(root,root.dataset.readerKind));nav();
     }
     const aboutStories=[
       {title:'小鸡合作社',category:'日常记录',image:'about-coop-chick.jpg',alt:'在阳光下抱着一只小鸡'},
       {title:'合作社售卖',category:'产品实践',image:'about-coop-market.jpg',alt:'小鸡合作社的产品与售卖现场'},
-      {title:'滑雪',category:'个人爱好',image:'about-ski.jpg',alt:'滑雪时佩戴头盔的留影'},
+      {title:'滑雪',category:'待更新',image:'about-ski.jpg',alt:'滑雪时佩戴头盔的留影'},
       {title:'个人简介',category:'PROFILE',image:'about-blank.svg',alt:''},
-      {title:'活动记录',category:'CO-OP / FIELD NOTES',image:'about-blank.svg',alt:''},
-      {title:'游戏记录',category:'GAME DESIGN',image:'game-isometric.webp',alt:'游戏策划中的等距世界地图草图'}
+      {title:'活动记录',category:'待更新',image:'about-blank.svg',alt:''},
+      {title:'游戏记录',category:'待更新',image:'game-isometric.webp',alt:'游戏策划中的等距世界地图草图'}
     ];
     function aboutPhoto(story){return `<div class="about-photo"><img src="${A+story.image}" alt="${esc(story.alt)}" draggable="false"${story.position?` style="object-position:${story.position}"`:''}></div>`}
-    function aboutCard(story,i){return `<article class="about-story-card" data-about-card="${i}">${aboutPhoto(story)}<div class="about-card-info"><strong>${esc(story.title)}</strong><span>${esc(story.category)}</span></div></article>`}
+    function aboutCard(story,i){if(i===3)return `<a class="about-story-card about-profile-card" data-about-card="${i}" href="#resume" tabindex="-1" aria-label="打开桑艺珊的个人简历"><div class="about-photo profile-cover-photo"><div class="profile-cover-art"><span class="profile-cover-brand">SIN3<span class="profile-cover-brand-detail"> / CURRICULUM VITAE</span></span><span class="profile-cover-watermark" aria-hidden="true">CV</span><div class="profile-cover-copy"><i class="profile-cover-rule" aria-hidden="true"></i><strong>桑艺珊</strong><span>个人简历</span></div></div></div><div class="about-card-info"><strong>个人简介</strong><span>RESUME ↗</span></div></a>`;return `<article class="about-story-card" data-about-card="${i}">${aboutPhoto(story)}<div class="about-card-info"><strong>${esc(story.title)}</strong><span>${esc(story.category)}</span></div></article>`}
     let aboutCardBases=[],aboutMeasuredWidth=0,aboutMeasuredHeight=0;
     function measureAboutCards(){
       const cards=[...document.querySelectorAll('#about-journey .about-story-card')];
@@ -484,8 +657,8 @@
     }
     function renderAbout(){
       const intro='以空间与环境设计为主要创作方向，也在探索游戏策划与数字创作。从课程中的空间方案，到项目中的尝试与落地，再到合作社里的劳动与售卖，我在不同的实践中积累经验，尝试把想法变成具体的作品。';
-      const initial=`<section class="about-page"><div class="about-journey" id="about-journey"><section class="about-intro-stage"><div class="about-intro"><p class="about-lead">${intro}</p></div><div class="about-scroll-hint">SCROLL TO BROWSE</div></section><section class="about-content-stage"><div class="about-identity" aria-label="桑艺珊的专业方向"><div class="eyebrow">ABOUT / SIN3</div><h1>桑艺珊</h1><div class="about-categories"><span>环境设计</span><span>游戏策划</span><span>Vibe Coding</span></div></div><section class="about-grid" aria-label="个人照片与经历"><div class="about-grid-items" data-scatter-settled="false">${aboutStories.map(aboutCard).join('')}</div></section></section></div><footer class="about-footer"><span>SIN3　/　SANG YISHAN</span><span>ABOUT</span></footer></section>`;
-      app.innerHTML=initial;measureAboutCards();updateAboutFlow();
+      const initial=`<section class="about-page"><div class="about-journey" id="about-journey"><section class="about-intro-stage"><div class="about-intro"><p class="about-lead">${intro}</p><a class="about-resume-link" href="#resume" data-about-resume>查看简历 <span aria-hidden="true">↗</span></a></div><div class="about-scroll-hint">SCROLL TO BROWSE</div></section><section class="about-content-stage"><div class="about-identity" aria-label="桑艺珊的专业方向"><div class="eyebrow">ABOUT / SIN3</div><h1>桑艺珊</h1><div class="about-categories"><span>环境设计</span><span>游戏策划</span><span>Vibe Coding</span></div></div><section class="about-grid" aria-label="个人照片与经历"><div class="about-grid-items" data-scatter-settled="false">${[3,0,2,1,4,5].map(i=>aboutCard(aboutStories[i],i)).join('')}</div></section></section></div><footer class="about-footer"><span>SIN3　/　SANG YISHAN</span><span>ABOUT</span></footer></section>`;
+      app.innerHTML=initial;app.querySelectorAll('[data-about-resume]').forEach(link=>link.onclick=e=>{e.preventDefault();go('#resume')});app.querySelector('[data-about-card="3"]').onclick=e=>{e.preventDefault();go('#resume',false,{resumeFocusCard:3})};measureAboutCards();updateAboutFlow();nav();
     }
     const aboutStarts=[
       {x:-2,y:13,w:17,h:24,r:-11},{x:85,y:12,w:17,h:24,r:10},
@@ -505,8 +678,8 @@
       if(cards.length!==aboutCardBases.length||aboutMeasuredWidth!==window.innerWidth||aboutMeasuredHeight!==window.innerHeight)measureAboutCards();
       const sectionTop=section.getBoundingClientRect().top+window.scrollY,progress=aboutClamp((window.scrollY-sectionTop)/Math.max(1,window.innerHeight)),settle=aboutSmooth(progress);
       const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduced){intro.style.opacity='1';intro.style.transform='none';identity.style.opacity='1';identity.style.transform='none';gridItems.dataset.scatterSettled='true';cards.forEach(card=>{card.style.transform='none';card.querySelector('.about-photo').style.cssText='';card.querySelector('.about-card-info').style.opacity='1'});return}
-      const introFade=aboutSmooth(progress/.78);intro.style.opacity=String(1-introFade);intro.style.transform=`translateY(${-22*introFade}px)`;
+      if(reduced){intro.style.opacity='1';intro.style.transform='none';identity.style.opacity='1';identity.style.transform='none';gridItems.dataset.scatterSettled='true';cards.forEach(card=>{card.style.transform='none';const photo=card.querySelector('.about-photo'),info=card.querySelector('.about-card-info');if(photo)photo.style.cssText='';if(info)info.style.opacity='1';if(card.matches('a.about-profile-card'))card.tabIndex=0});return}
+      const introFade=aboutSmooth(progress/.78);intro.style.opacity=String(1-introFade);intro.style.transform=`translateY(${-22*introFade}px)`;intro.style.pointerEvents=introFade>.95?'none':'auto';const resumeLink=intro.querySelector('[data-about-resume]');if(resumeLink){resumeLink.tabIndex=introFade>.95?-1:0;resumeLink.setAttribute('aria-hidden',String(introFade>.95))}
       const identityIn=aboutSmooth((progress-.12)/.83);identity.style.opacity=String(identityIn);identity.style.transform=`translateY(${(1-identityIn)*16}px)`;
       const isMobile=window.innerWidth<=760,starts=isMobile?aboutMobileStarts:aboutStarts,scrollTop=window.scrollY;
       gridItems.dataset.scatterSettled=String(progress>=.96);
@@ -518,15 +691,23 @@
         const startScale=Math.min(startWidth/base.width,startHeight/base.height),scale=startScale+(1-startScale)*settle;
         const dx=centerX-baseCenterX,dy=centerY-baseCenterY,rotation=start.r*(1-settle);
         card.style.transform=`translate3d(${dx}px,${dy}px,0) rotate(${rotation}deg) scale(${scale})`;
-        const photo=card.querySelector('.about-photo');photo.style.left=(14*settle)+'%';photo.style.top=(6*settle)+'%';photo.style.width=(100-28*settle)+'%';photo.style.height=(100-23*settle)+'%';photo.style.borderRadius=(13-3*settle)+'px';
-        card.querySelector('.about-card-info').style.opacity=String(aboutSmooth((progress-.68)/.25));
+        const photo=card.querySelector('.about-photo');if(photo){photo.style.left=(14*settle)+'%';photo.style.top=(6*settle)+'%';photo.style.width=(100-28*settle)+'%';photo.style.height=(100-23*settle)+'%';photo.style.borderRadius=(13-3*settle)+'px'}
+        const info=card.querySelector('.about-card-info');if(info)info.style.opacity=String(aboutSmooth((progress-.68)/.25));
+        if(card.matches('a.about-profile-card'))card.tabIndex=progress>=.96?0:-1;
       });
       const hint=section.querySelector('.about-scroll-hint');if(hint)hint.style.opacity=String(1-aboutSmooth(progress/.72));
     }
 
-    function render(){clearInterval(cycleTimer);cycleTimer=null;const r=currentRoute();if(r.type==='category')renderCategory(r.id);else if(r.type==='project')renderProject(r.id);else if(r.type==='about')renderAbout();else renderHome(r.stage);}
+    function renderResume(){
+      const stats=resumeData.stats.map(item=>`<div class="resume-stat"><strong>${esc(item.value)}</strong><span>${esc(item.label)}</span></div>`).join('');
+      const experiences=resumeData.experiences.map(item=>`<section class="resume-section"><h2 class="resume-section-title">${esc(item.section)}</h2><article class="resume-entry"><h3>${esc(item.title)}</h3><div class="resume-entry-meta">${esc(item.meta)}${item.scale?`　·　${esc(item.scale)}`:''}</div><p>${esc(item.description)}</p></article></section>`).join('');
+      const skills=resumeData.skills.map(item=>`<div class="resume-skill"><h3>${esc(item.label)}</h3><p>${esc(item.text)}</p></div>`).join('');
+      app.innerHTML=`<section class="resume-page"><div class="resume-shell"><a class="resume-return-top" href="#about" data-resume-about>← 返回 About</a><header class="resume-hero"><div class="resume-brand">${esc(resumeData.brand)}　/　PROFILE</div><h1 class="resume-name">${esc(resumeData.name)}</h1><p class="resume-headline">${esc(resumeData.headline)}</p><div class="resume-contact"><a href="mailto:${esc(resumeData.contact)}">${esc(resumeData.contact)}</a><span>意向城市：${resumeData.locations.map(esc).join('、')}</span><span>${esc(resumeData.availability)}</span></div></header><section class="resume-stats" aria-label="个人数据">${stats}</section>${experiences}<section class="resume-section"><h2 class="resume-section-title">教育背景</h2><div class="resume-education"><strong>${esc(resumeData.education.school)}｜${esc(resumeData.education.major)}｜${esc(resumeData.education.status)}</strong><p>${esc(resumeData.education.year)}，${esc(resumeData.education.graduation)}；专业课平均分90+。</p></div></section><section class="resume-section"><h2 class="resume-section-title">技能</h2><div class="resume-skills">${skills}</div></section><section class="resume-section resume-strengths"><h2 class="resume-section-title">个人优势</h2><p>${esc(resumeData.strengths)}</p></section><footer class="resume-footer"><p>联系邮箱<br><a href="mailto:${esc(resumeData.contact)}">${esc(resumeData.contact)}</a></p><a class="resume-return-bottom" href="#about" data-resume-about>返回 About　↗</a></footer></div></section>`;
+      app.querySelectorAll('[data-resume-about]').forEach(link=>link.onclick=e=>{e.preventDefault();returnResumeToAbout()});nav();
+    }
+    function render(){clearInterval(cycleTimer);cycleTimer=null;if(activeGamePlanReader)closeGamePlanReader({restoreFocus:false,restoreScroll:false});const r=currentRoute();document.body.classList.toggle('resume-mode',r.type==='resume');document.body.classList.toggle('about-mode',r.type==='about');if(r.type==='category')renderCategory(r.id);else if(r.type==='coursework')renderCoursework();else if(r.type==='project')renderProject(r.id);else if(r.type==='about')renderAbout();else if(r.type==='resume')renderResume();else renderHome(r.stage);requestAnimationFrame(updateTopbarGlass)}
     function openLightbox(src,caption){const d=document.querySelector('#lightbox');d.querySelector('img').src=src;d.querySelector('img').alt=caption;d.querySelector('.lightbox-caption').textContent=caption;d.showModal()}
-    document.querySelector('#lightbox .lightbox-close').onclick=()=>document.querySelector('#lightbox').close();document.querySelector('#lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInterval(cycleTimer);cycleTimer=null}else if(currentRoute().type==='home'&&currentRoute().stage==='work'&&restartHubCycle)restartHubCycle()});window.addEventListener('popstate',()=>{render();window.scrollTo(0,0)});window.addEventListener('scroll',()=>{if(!window.__aboutRaf){window.__aboutRaf=requestAnimationFrame(()=>{window.__aboutRaf=0;updateAboutFlow()})}},{passive:true});window.addEventListener('resize',()=>requestAnimationFrame(()=>{measureAboutCards();updateAboutFlow()}));render();
+    history.scrollRestoration='manual';document.querySelector('#lightbox .lightbox-close').onclick=()=>document.querySelector('#lightbox').close();document.querySelector('#lightbox').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.close()});document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInterval(cycleTimer);cycleTimer=null}else if(currentRoute().type==='home'&&currentRoute().stage==='work'&&restartHubCycle)restartHubCycle()});window.addEventListener('popstate',event=>{render();const route=currentRoute(),state=event.state||{},restore=Math.max(0,Number(state.scrollY)||0);requestAnimationFrame(()=>{window.scrollTo({top:restore,behavior:'auto'});updateAboutFlow();updateTopbarGlass();if(route.type==='about'&&state.resumeFocusCard===3){const card=document.querySelector('#about-journey [data-about-card="3"]');if(card&&card.tabIndex===0)card.focus({preventScroll:true})}})});window.addEventListener('scroll',()=>{if(!window.__aboutRaf){window.__aboutRaf=requestAnimationFrame(()=>{window.__aboutRaf=0;updateAboutFlow();updateTopbarGlass()})}},{passive:true});window.addEventListener('resize',()=>requestAnimationFrame(()=>{measureAboutCards();updateAboutFlow();updateTopbarGlass()}));render();
   </script>
 </body>
 </html>

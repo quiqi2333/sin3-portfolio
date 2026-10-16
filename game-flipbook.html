@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#e7e6e2">
+  <title>浮岚——雾与镜 · 策划案阅读器</title>
+  <link rel="stylesheet" href="./assets/new/game-flipbook.css">
+</head>
+<body>
+  <main class="reader-shell" aria-label="游戏策划案翻页阅读器">
+    <section class="reader-stage" id="reader-stage" aria-label="策划案页面">
+      <div class="book" id="book" aria-label="16 页策划案">
+        <article class="page" data-page="1"><img data-src="./assets/new/game-page-01.jpg" alt="策划案第 1 页" draggable="false"></article>
+        <article class="page" data-page="2"><img data-src="./assets/new/game-page-02.jpg" alt="策划案第 2 页" draggable="false"></article>
+        <article class="page" data-page="3"><img data-src="./assets/new/game-page-03.jpg" alt="策划案第 3 页" draggable="false"></article>
+        <article class="page" data-page="4"><img data-src="./assets/new/game-page-04.jpg" alt="策划案第 4 页" draggable="false"></article>
+        <article class="page" data-page="5"><img data-src="./assets/new/game-page-05.jpg" alt="策划案第 5 页" draggable="false"></article>
+        <article class="page" data-page="6"><img data-src="./assets/new/game-page-06.jpg" alt="策划案第 6 页" draggable="false"></article>
+        <article class="page" data-page="7"><img data-src="./assets/new/game-page-07.jpg" alt="策划案第 7 页" draggable="false"></article>
+        <article class="page" data-page="8"><img data-src="./assets/new/game-page-08.jpg" alt="策划案第 8 页" draggable="false"></article>
+        <article class="page" data-page="9"><img data-src="./assets/new/game-page-09.jpg" alt="策划案第 9 页" draggable="false"></article>
+        <article class="page" data-page="10"><img data-src="./assets/new/game-page-10.jpg" alt="策划案第 10 页" draggable="false"></article>
+        <article class="page" data-page="11"><img data-src="./assets/new/game-page-11.jpg" alt="策划案第 11 页" draggable="false"></article>
+        <article class="page" data-page="12"><img data-src="./assets/new/game-page-12.jpg" alt="策划案第 12 页" draggable="false"></article>
+        <article class="page" data-page="13"><img data-src="./assets/new/game-page-13.jpg" alt="策划案第 13 页" draggable="false"></article>
+        <article class="page" data-page="14"><img data-src="./assets/new/game-page-14.jpg" alt="策划案第 14 页" draggable="false"></article>
+        <article class="page" data-page="15"><img data-src="./assets/new/game-page-15.jpg" alt="策划案第 15 页" draggable="false"></article>
+        <article class="page" data-page="16"><img data-src="./assets/new/game-page-16.jpg" alt="策划案第 16 页" draggable="false"></article>
+      </div>
+      <div class="zoom-layer" id="zoom-layer" hidden aria-label="原尺寸页面查看">
+        <div class="zoom-toolbar" aria-label="放大查看控制">
+          <button type="button" data-zoom-size="fit" aria-pressed="true">适应窗口</button>
+          <button type="button" data-zoom-size="1" aria-pressed="false">100%</button>
+          <button type="button" data-zoom-size="2" aria-pressed="false">200%</button>
+          <span class="zoom-current-page" id="zoom-current-page">第 1 页</span>
+          <button type="button" class="zoom-close" id="zoom-close">退出放大</button>
+        </div>
+        <div class="zoom-view" id="zoom-view" data-fit="true" tabindex="0" aria-label="可滚动查看原尺寸页面">
+          <img class="zoom-image" id="zoom-image" alt="策划案页面放大查看" draggable="false">
+        </div>
+      </div>
+      <div class="reader-error" id="reader-error" hidden role="alert">
+        <div class="reader-error-card">
+          <div class="reader-error-kicker">PAGE UNAVAILABLE</div>
+          <h1 id="reader-error-title">页面暂时无法载入</h1>
+          <p id="reader-error-copy">请重试，或在新窗口打开原 PDF。</p>
+          <div class="reader-error-actions"><button type="button" id="reader-retry">重试此页</button><a href="./assets/new/game-plan-16-pages.pdf" target="_blank" rel="noopener">打开原 PDF ↗</a></div>
+        </div>
+      </div>
+    </section>
+    <footer class="reader-controls">
+      <div class="reader-page-controls" aria-label="页面导航">
+        <button class="reader-arrow" id="reader-prev" type="button" aria-label="上一页">←</button>
+        <div class="reader-page-readout" id="reader-page-readout" aria-live="polite">第 1 页 / 16</div>
+        <button class="reader-arrow" id="reader-next" type="button" aria-label="下一页">→</button>
+        <label class="reader-jump-label" for="reader-jump">跳至</label>
+        <input class="reader-jump-input" id="reader-jump" type="number" min="1" max="16" inputmode="numeric" aria-label="跳转到策划案页码">
+        <span class="reader-jump-suffix">页</span>
+        <button class="reader-jump-button" id="reader-jump-button" type="button">前往</button>
+      </div>
+      <div class="reader-tools">
+        <button class="reader-mode" id="reader-mode" type="button" aria-label="切换到双页总览">双页总览</button>
+        <button class="reader-zoom-toggle" id="reader-zoom-toggle" type="button" aria-pressed="false">放大查看</button>
+        <a class="reader-pdf-link" href="./assets/new/game-plan-16-pages.pdf" target="_blank" rel="noopener">原 PDF ↗</a>
+      </div>
+    </footer>
+    <div class="reader-live" id="reader-live" aria-live="polite"></div>
+  </main>
+  <script src="./vendor/page-flip-2.0.7/page-flip.browser.js"></script>
+  <script src="./assets/new/game-flipbook.js"></script>
+</body>
+</html>

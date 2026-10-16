@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#e9e7e1">
+  <title>其他课设 · 翻页阅读器</title>
+  <link rel="stylesheet" href="./assets/new/game-flipbook.css">
+  <link rel="stylesheet" href="./assets/new/coursework-flipbook.css">
+</head>
+<body>
+  <main class="reader-shell coursework-reader" id="reader-shell" aria-label="课设翻页阅读器">
+    <section class="reader-stage" id="reader-stage" aria-label="课设页面">
+      <div class="book" id="book" aria-label="课设页面" hidden></div>
+      <div class="zoom-layer" id="zoom-layer" hidden aria-label="页面放大查看">
+        <div class="zoom-toolbar" aria-label="放大查看控制">
+          <button type="button" data-zoom-size="fit" aria-pressed="true">适应窗口</button>
+          <button type="button" data-zoom-size="1" aria-pressed="false">100%</button>
+          <button type="button" data-zoom-size="2" aria-pressed="false">200%</button>
+          <button type="button" id="zoom-page-left" class="zoom-page-select" aria-label="放大左页">左页</button>
+          <button type="button" id="zoom-page-right" class="zoom-page-select" aria-label="放大右页">右页</button>
+          <span class="zoom-current-page" id="zoom-current-page">第 1 页</span>
+          <button type="button" class="zoom-close" id="zoom-close">退出放大</button>
+        </div>
+        <div class="zoom-view" id="zoom-view" data-fit="true" tabindex="0" aria-label="可滚动查看完整页面">
+          <img class="zoom-image" id="zoom-image" alt="课设页面放大查看" draggable="false">
+        </div>
+      </div>
+      <div class="reader-error" id="reader-error" hidden role="alert">
+        <div class="reader-error-card">
+          <div class="reader-error-kicker">PAGE UNAVAILABLE</div>
+          <h1 id="reader-error-title">页面暂时无法载入</h1>
+          <p id="reader-error-copy">请重试，或在新窗口打开当前页面图。</p>
+          <div class="reader-error-actions"><button type="button" id="reader-retry">重试此页</button><a id="reader-open-current" href="#" target="_blank" rel="noopener">打开当前页面 ↗</a></div>
+        </div>
+      </div>
+    </section>
+    <footer class="reader-controls">
+      <div class="reader-page-controls" aria-label="页面导航">
+        <button class="reader-arrow" id="reader-prev" type="button" aria-label="上一页">←</button>
+        <div class="reader-page-readout" id="reader-page-readout" aria-live="polite">第 1 页</div>
+        <button class="reader-arrow" id="reader-next" type="button" aria-label="下一页">→</button>
+        <label class="reader-jump-label" for="reader-jump">跳至</label>
+        <input class="reader-jump-input" id="reader-jump" type="number" min="1" max="1" inputmode="numeric" aria-label="跳转到课设页码">
+        <span class="reader-jump-suffix">页</span>
+        <button class="reader-jump-button" id="reader-jump-button" type="button">前往</button>
+      </div>
+      <div class="reader-tools">
+        <button class="reader-mode" id="reader-mode" type="button" aria-label="切换到双页阅读">双页阅读</button>
+        <button class="reader-zoom-toggle" id="reader-zoom-toggle" type="button" aria-pressed="false">放大查看</button>
+      </div>
+    </footer>
+    <div class="reader-live" id="reader-live" aria-live="polite"></div>
+  </main>
+  <script src="./vendor/page-flip-2.0.7/page-flip.browser.js"></script>
+  <script src="./assets/new/coursework-book-loader.js"></script>
+</body>
+</html>

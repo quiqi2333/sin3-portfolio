@@ -1,0 +1,19 @@
+/* Salt project reader overrides layered on the shared game flipbook stylesheet. */
+:root{background:#e9e7e1}
+html,body,.reader-shell,.reader-stage{background:#e9e7e1}
+.reader-controls,.zoom-toolbar{background:#f0efeb}
+.book,.page,.stf__item{background:#f7f4ed;color:#242320}
+.page,.stf__item{border:1px solid #d3d0c8}
+.page img{object-fit:contain;background:#f7f4ed;padding:2.2%}
+.static-book[data-mode="single"]{grid-template-columns:minmax(0,min(100%,calc((100dvh - 170px)*1.295)))}
+.static-book .page{aspect-ratio:1.295;box-shadow:0 12px 30px #5c574d26}
+.static-book .page img{aspect-ratio:1.295}
+.zoom-layer{background:#e9e7e1}
+.zoom-view{background:#e1dfd8}
+.zoom-image{background:#f7f4ed}
+.reader-error{background:#e9e7e1ed}
+.reader-error-card{background:#f3f1eb}
+.zoom-page-select[hidden]{display:none}
+.reader-error-actions a{white-space:nowrap}
+.reader-fallback-note{position:absolute;z-index:2;top:10px;left:50%;transform:translateX(-50%);padding:7px 12px;border:1px solid #25252922;border-radius:999px;background:#f3f1eb;color:#55545a;font-size:10px;white-space:nowrap}
+@media(max-width:560px){.static-book[data-mode="single"]{grid-template-columns:minmax(0,min(100%,calc((100dvh - 160px)*1.295)))}}

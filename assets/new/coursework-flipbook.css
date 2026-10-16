@@ -1,0 +1,19 @@
+/* Coursework pages use the same reader controls and book interaction as the existing project albums. */
+:root{background:#e9e7e1}
+html,body,.reader-shell,.reader-stage{background:#e9e7e1}
+.reader-controls,.zoom-toolbar{background:#f0efeb}
+.coursework-reader .book,.coursework-reader .page,.coursework-reader .stf__item{background:#f7f4ed;color:#242320}
+.coursework-reader .page,.coursework-reader .stf__item{border:1px solid #d3d0c8}
+.coursework-reader .page img{object-fit:contain;background:#f7f4ed;padding:2.2%}
+.coursework-reader .static-book[data-mode="single"]{grid-template-columns:minmax(0,min(100%,calc((100dvh - 170px)*1.7777778)))}
+.coursework-reader .static-book .page{aspect-ratio:16/9;box-shadow:0 12px 30px #5c574d26}
+.coursework-reader .static-book .page img{aspect-ratio:16/9}
+.coursework-reader .zoom-layer{background:#e9e7e1}
+.coursework-reader .zoom-view{background:#e1dfd8}
+.coursework-reader .zoom-image{background:#f7f4ed}
+.coursework-reader .reader-error{background:#e9e7e1ed}
+.coursework-reader .reader-error-card{background:#f3f1eb}
+.coursework-reader .zoom-page-select[hidden]{display:none}
+.coursework-reader .reader-error-actions a{white-space:nowrap}
+.coursework-reader .reader-fallback-note{background:#f3f1eb}
+@media(max-width:560px){.coursework-reader .static-book[data-mode="single"]{grid-template-columns:minmax(0,min(100%,calc((100dvh - 160px)*1.7777778)))}}
